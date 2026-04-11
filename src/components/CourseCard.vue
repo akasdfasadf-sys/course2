@@ -1,53 +1,70 @@
 <template>
-  <RouterLink :to="`/course/${course.id}`" class="block group">
-    <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-      <div class="relative aspect-video overflow-hidden">
-        <img :src="course.thumbnail" :alt="course.titleTm"
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          @error="e => e.target.src='https://placehold.co/400x225?text=Kurs'" />
-        <div v-if="isEnrolled && course.progress > 0"
-          class="absolute bottom-0 left-0 right-0 bg-gray-900/80 p-2">
+  <RouterLink :to="`/course/${course.id}`" class="block group h-full">
+    <article
+      class="bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-[var(--bm-shadow-card)] h-full flex flex-col transition-all duration-300 ease-out group-hover:shadow-[var(--bm-shadow-card-hover)] group-hover:-translate-y-1.5 group-hover:border-blue-200/60 ring-0 group-hover:ring-2 group-hover:ring-blue-500/10"
+    >
+      <div class="relative aspect-video overflow-hidden flex-shrink-0 bg-slate-100">
+        <img
+          :src="course.thumbnail"
+          :alt="course.titleTm"
+          class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.06]"
+          @error="e => (e.target.src = 'https://placehold.co/400x225?text=Kurs')"
+        />
+        <div
+          v-if="isEnrolled && course.progress > 0"
+          class="absolute bottom-0 left-0 right-0 bg-gray-950/85 backdrop-blur-sm p-2.5 border-t border-white/10"
+        >
           <div class="h-1.5 bg-gray-700 rounded-full overflow-hidden">
-            <div class="h-full bg-blue-500 rounded-full" :style="`width:${course.progress}%`" />
+            <div class="h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full transition-all duration-500" :style="`width:${course.progress}%`" />
           </div>
-          <p class="text-white text-xs mt-1">{{ course.progress }}% tamamlandy</p>
+          <p class="text-white text-xs mt-1.5 font-medium">{{ course.progress }}% tamamlandy</p>
         </div>
       </div>
 
-      <div class="p-4">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">{{ course.categoryTm }}</span>
-          <span class="text-xs text-gray-500">{{ course.weeks }} hepde</span>
+      <div class="p-3 md:p-4 flex flex-col flex-1">
+        <div class="flex items-center gap-2 mb-2 flex-wrap">
+          <span class="text-xs font-semibold text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-lg border border-blue-100/80">{{ course.categoryTm }}</span>
+          <span class="text-xs text-gray-500 font-medium">{{ course.weeks }} hepde</span>
         </div>
-        <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
+
+        <h3
+          class="font-bold text-gray-900 mb-1.5 md:mb-2 line-clamp-2 group-hover:text-blue-700 transition-colors duration-200 text-sm md:text-base flex-1 leading-snug"
+        >
           {{ course.titleTm }}
         </h3>
-        <p class="text-sm text-gray-600 mb-3 line-clamp-2">{{ course.descriptionTm }}</p>
-        <div class="flex items-center gap-1 mb-3">
-          <img :src="course.instructorAvatar" :alt="course.instructor"
-            class="w-6 h-6 rounded-full object-cover"
-            @error="e => e.target.src='https://placehold.co/24x24'" />
-          <span class="text-sm text-gray-700">{{ course.instructor }}</span>
+
+        <p class="text-xs md:text-sm text-gray-600 mb-2 md:mb-3 line-clamp-2 leading-relaxed">{{ course.descriptionTm }}</p>
+
+        <div class="flex items-center gap-1.5 mb-2 md:mb-3">
+          <img
+            :src="course.instructorAvatar"
+            :alt="course.instructor"
+            class="w-5 h-5 md:w-6 md:h-6 rounded-full object-cover flex-shrink-0 ring-2 ring-white shadow-sm"
+            @error="e => (e.target.src = 'https://placehold.co/24x24')"
+          />
+          <span class="text-xs md:text-sm text-gray-700 truncate font-medium">{{ course.instructor }}</span>
         </div>
-        <div class="flex items-center justify-between text-sm text-gray-600 mb-3">
+
+        <div class="flex items-center justify-between text-xs md:text-sm text-gray-600 mb-2 md:mb-3">
           <div class="flex items-center gap-1">
-            <Star class="w-4 h-4 fill-yellow-400 text-yellow-400" />
-            <span class="font-medium">{{ course.rating }}</span>
+            <Star class="w-3.5 h-3.5 md:w-4 md:h-4 fill-amber-400 text-amber-400" />
+            <span class="font-semibold text-gray-800">{{ course.rating }}</span>
           </div>
           <div class="flex items-center gap-1">
-            <Users class="w-4 h-4" />
+            <Users class="w-3.5 h-3.5 md:w-4 md:h-4" />
             <span>{{ course.studentsEnrolled }}</span>
           </div>
         </div>
-        <div class="flex items-center justify-between">
+
+        <div class="flex items-center justify-between mt-auto pt-1">
           <div>
-            <span class="text-xl font-semibold text-gray-900">{{ course.price30 }} TMT</span>
-            <span class="text-sm text-gray-500 line-through ml-2">{{ course.basePrice }} TMT</span>
+            <span class="text-base md:text-xl font-bold text-gray-900">{{ course.price30 }} TMT</span>
+            <span class="text-xs md:text-sm text-gray-500 line-through ml-1.5">{{ course.basePrice }} TMT</span>
           </div>
-          <span v-if="isEnrolled" class="text-sm font-medium text-green-600">Ýazylan</span>
+          <span v-if="isEnrolled" class="text-xs md:text-sm font-semibold text-emerald-600">Ýazylan</span>
         </div>
       </div>
-    </div>
+    </article>
   </RouterLink>
 </template>
 

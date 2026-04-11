@@ -1,38 +1,47 @@
 <template>
-  <div class="min-h-screen bg-gray-50">
+  <div class="min-h-screen bg-gradient-to-b from-slate-50 to-white">
     <AppHeader />
 
-    <div class="bg-white border-b">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 class="text-3xl font-bold text-gray-900 mb-2">Ähli kurslar</h1>
-        <p class="text-gray-600">{{ categories.length }} kategoriýada {{ courses.length }} kursy öwreniň</p>
+    <div class="relative overflow-hidden bg-white border-b border-gray-100">
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-transparent to-indigo-50/50 pointer-events-none" />
+      <div v-bm-reveal:up class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10">
+        <h1 class="text-2xl md:text-4xl font-extrabold text-gray-900 mb-1 md:mb-2 tracking-tight">Ähli kurslar</h1>
+        <p class="text-sm md:text-base text-gray-600">{{ categories.length }} kategoriýada {{ courses.length }} kursy öwreniň</p>
       </div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div class="mb-6">
-        <div class="relative">
-          <Search class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-          <input v-model="search" type="text" placeholder="Kurslary gözle..."
-            class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 md:py-8">
+      <div v-bm-reveal:scale class="mb-4 md:mb-6">
+        <div
+          class="relative flex items-center rounded-2xl bg-white border border-gray-200 shadow-sm focus-within:ring-2 focus-within:ring-blue-500/30 focus-within:border-blue-400 transition-all duration-200"
+        >
+          <Search class="absolute left-4 w-5 h-5 text-gray-400 pointer-events-none" />
+          <input
+            v-model="search"
+            type="text"
+            placeholder="Kurslary gözle..."
+            class="w-full pl-12 pr-4 py-3.5 md:py-4 bg-transparent rounded-2xl focus:outline-none text-base placeholder:text-gray-400"
+          />
         </div>
       </div>
 
-      <div class="mb-8">
+      <div v-bm-reveal:up class="mb-5 md:mb-8">
         <CategoryFilter :categories="categories" :selected="selectedCat" @select="selectedCat = $event" />
       </div>
 
-      <div class="mb-4">
-        <p class="text-gray-600">{{ filtered.length }} kurs tapyldy</p>
+      <div class="mb-3 md:mb-4">
+        <p class="text-sm md:text-base text-gray-600 font-medium">{{ filtered.length }} kurs tapyldy</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <CourseCard v-for="c in filtered" :key="c.id" :course="c" />
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div v-for="(c, idx) in filtered" :key="c.id" v-bm-reveal:up="Math.min(idx * 45, 360)">
+          <CourseCard :course="c" />
+        </div>
       </div>
 
-      <div v-if="filtered.length === 0" class="text-center py-16">
-        <p class="text-gray-500 text-lg">Hiç hili kurs tapylmady</p>
-        <button @click="search=''; selectedCat='All'" class="mt-4 text-blue-600 hover:text-blue-700 font-medium">
+      <div v-if="filtered.length === 0" v-bm-reveal:scale class="text-center py-12 md:py-16">
+        <p class="text-gray-500 text-base md:text-lg">Hiç hili kurs tapylmady</p>
+        <button type="button" @click="clearFilters" class="mt-4 text-blue-600 hover:text-blue-700 font-semibold text-sm md:text-base transition-colors">
           Filtrleri aýyr
         </button>
       </div>
@@ -51,10 +60,18 @@ import { courses, categories } from '../data/courses'
 const search = ref('')
 const selectedCat = ref('All')
 
-const filtered = computed(() => courses.filter(c => {
-  const matchCat = selectedCat.value === 'All' || c.categoryTm === selectedCat.value
-  const matchSearch = c.titleTm.toLowerCase().includes(search.value.toLowerCase()) ||
-    c.descriptionTm.toLowerCase().includes(search.value.toLowerCase())
-  return matchCat && matchSearch
-}))
+const filtered = computed(() =>
+  courses.filter(c => {
+    const matchCat = selectedCat.value === 'All' || c.categoryTm === selectedCat.value
+    const matchSearch =
+      c.titleTm.toLowerCase().includes(search.value.toLowerCase()) ||
+      c.descriptionTm.toLowerCase().includes(search.value.toLowerCase())
+    return matchCat && matchSearch
+  }),
+)
+
+function clearFilters() {
+  search.value = ''
+  selectedCat.value = 'All'
+}
 </script>

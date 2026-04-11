@@ -1,1 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Design tokens — Coursera / edX inspired primary */
+:root {
+  --bm-primary: #0056d2;
+  --bm-primary-hover: #0047b0;
+  --bm-accent: #0f766e;
+  --bm-radius-lg: 1rem;
+  --bm-radius-xl: 1.25rem;
+  --bm-shadow-card: 0 1px 3px rgb(0 0 0 / 0.06), 0 12px 32px rgb(0 0 0 / 0.06);
+  --bm-shadow-card-hover: 0 4px 12px rgb(0 0 0 / 0.08), 0 20px 48px rgb(0 86 210 / 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Lenis — native smooth-scroll bilen çaknyşma bolmasyn */
+html.lenis,
+html.lenis body {
+  scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes bm-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bm-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bm-gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes bm-float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(8px, -12px) scale(1.02);
+  }
+  66% {
+    transform: translate(-6px, 6px) scale(0.98);
+  }
+}
+
+.bm-animate-fade-up {
+  animation: bm-fade-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.bm-animate-fade-in {
+  animation: bm-fade-in 0.45s ease both;
+}
+
+.bm-stagger > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.bm-stagger > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.bm-stagger > *:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.bm-stagger > *:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.bm-stagger > *:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.bm-stagger > *:nth-child(6) {
+  animation-delay: 0.3s;
+}
+.bm-stagger > *:nth-child(7) {
+  animation-delay: 0.35s;
+}
+.bm-stagger > *:nth-child(8) {
+  animation-delay: 0.4s;
+}
+
+.bm-stagger > * {
+  opacity: 0;
+  animation: bm-fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.bm-hero-blob {
+  animation: bm-float 18s ease-in-out infinite;
+}
+.bm-hero-blob-delay {
+  animation-delay: -6s;
+}
+.bm-hero-blob-delay-2 {
+  animation-delay: -12s;
+}
+
+.bm-hero-gradient {
+  background-size: 200% 200%;
+  animation: bm-gradient-shift 12s ease infinite;
+}
+
+/* Vue Router page transition */
+.page-fade-enter-active {
+  transition:
+    opacity 0.28s ease,
+    transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.page-fade-leave-active {
+  transition:
+    opacity 0.2s ease,
+    transform 0.22s ease;
+}
+.page-fade-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.page-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bm-animate-fade-up,
+  .bm-animate-fade-in,
+  .bm-stagger > * {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .bm-hero-blob,
+  .bm-hero-gradient {
+    animation: none !important;
+  }
+  .page-fade-enter-active,
+  .page-fade-leave-active {
+    transition: none !important;
+  }
+}
+
+/* Scroll bilen görünýän bloklar (IntersectionObserver) */
+.bm-reveal {
+  opacity: 0;
+  will-change: opacity, transform, filter;
+  transition:
+    opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.65s ease;
+}
+
+.bm-reveal--up {
+  transform: translate3d(0, 2.25rem, 0);
+  filter: blur(7px);
+}
+
+.bm-reveal--down {
+  transform: translate3d(0, -2rem, 0);
+  filter: blur(6px);
+}
+
+.bm-reveal--left {
+  transform: translate3d(-2.25rem, 0, 0);
+  filter: blur(5px);
+}
+
+.bm-reveal--right {
+  transform: translate3d(2.25rem, 0, 0);
+  filter: blur(5px);
+}
+
+.bm-reveal--scale {
+  transform: scale(0.93) translate3d(0, 1rem, 0);
+  filter: blur(8px);
+}
+
+.bm-reveal--visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: none;
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bm-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+}
