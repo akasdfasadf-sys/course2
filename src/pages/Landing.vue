@@ -74,7 +74,7 @@
             <span class="text-xs md:text-sm font-medium">Türkmenistanyň iň öňdebaryjy onlaýn okuw platformasy</span>
           </div>
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 md:mb-6 leading-[1.1] tracking-tight">
-            Geljegiňizi häzir<br />
+            Geljegiňizi <br />
             <span class="text-blue-100">Döretmäge Başlaň</span>
           </h1>
           <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-50/95 mb-6 md:mb-8 leading-relaxed px-2 max-w-3xl mx-auto">
