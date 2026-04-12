@@ -9,7 +9,7 @@
         <div v-bm-reveal:up class="max-w-3xl">
           <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 md:mb-6 leading-tight tracking-tight">Täze başarnyklary öwreniň</h1>
           <p class="text-base md:text-xl text-blue-100/95 mb-6 md:mb-8 leading-relaxed">
-            Hünärmenler tarapyndan öwredilýän müňlerçe kursa giriň. Häzir öwrenip başlaň we karýeraňyzy ösdüriň.
+            Hünärmenler tarapyndan öwredilýän müňlerçe kurslara giriň. 
           </p>
           <RouterLink
             to="/courses"
