@@ -29,6 +29,10 @@ const routes = [
     path: '/my-learning', component: () => import('../pages/MyLearning.vue'),
     meta: { requiresAuth: true }
   },
+  {
+    path: '/profile', component: () => import('../pages/Profile.vue'),
+    meta: { requiresAuth: true }
+  },
 ]
 
 const router = createRouter({

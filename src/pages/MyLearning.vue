@@ -46,5 +46,5 @@ import { courses } from '../data/courses'
 import { useAuth } from '../stores/auth'
 
 const auth = useAuth()
-const enrolled = computed(() => courses.filter(c => auth.user?.enrolledCourses?.includes(c.id)))
+const enrolled = computed(() => courses.filter(c => auth.user.value?.enrolledCourses?.includes(c.id)))
 </script>

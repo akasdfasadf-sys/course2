@@ -1,4 +1,4 @@
-import { reactive, readonly } from 'vue'
+import { reactive, computed } from 'vue'
 
 const state = reactive({
   user: null,
@@ -9,6 +9,7 @@ const stored = localStorage.getItem('currentUser')
 if (stored) state.user = JSON.parse(stored)
 
 export function useAuth() {
+  const user = computed(() => state.user)
   const isAuthenticated = () => !!state.user
 
   const login = (email, password) => {
@@ -47,5 +48,5 @@ export function useAuth() {
     localStorage.setItem('users', JSON.stringify(users.map(u => u.id === updated.id ? updated : u)))
   }
 
-  return { user: state, isAuthenticated, login, register, logout, enrollCourse }
+  return { user, isAuthenticated, login, register, logout, enrollCourse }
 }

@@ -24,6 +24,14 @@
       <div class="p-3 md:p-4 flex flex-col flex-1">
         <div class="flex items-center gap-2 mb-2 flex-wrap">
           <span class="text-xs font-semibold text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-lg border border-blue-100/80">{{ course.categoryTm }}</span>
+          <span
+            :class="[
+              'text-xs font-semibold px-2 py-0.5 rounded-lg',
+              course.level === 'Beginner' ? 'bg-green-50 text-green-700' :
+              course.level === 'Intermediate' ? 'bg-yellow-50 text-yellow-700' :
+              'bg-red-50 text-red-700'
+            ]"
+          >{{ course.level === 'Beginner' ? '🟢 Başlangyç' : course.level === 'Intermediate' ? '🟡 Orta' : '🔴 Ösen' }}</span>
           <span class="text-xs text-gray-500 font-medium">{{ course.weeks }} hepde</span>
         </div>
 
@@ -75,5 +83,5 @@ import { useAuth } from '../stores/auth'
 
 const props = defineProps({ course: Object })
 const auth = useAuth()
-const isEnrolled = computed(() => auth.user?.enrolledCourses?.includes(props.course.id))
+const isEnrolled = computed(() => auth.user.value?.enrolledCourses?.includes(props.course.id))
 </script>

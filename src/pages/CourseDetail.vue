@@ -192,7 +192,7 @@ import { useAuth } from '../stores/auth'
 const route = useRoute()
 const auth = useAuth()
 const course = computed(() => courses.find(c => c.id === route.params.id))
-const isEnrolled = computed(() => auth.user?.enrolledCourses?.includes(course.value?.id))
+const isEnrolled = computed(() => auth.user.value?.enrolledCourses?.includes(course.value?.id))
 
 const learnings = [
   'Esaslardan başlap ösen düşünjelere çenli ähli mowzuklary öwrenersiňiz',

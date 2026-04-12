@@ -33,12 +33,13 @@
         </nav>
 
         <div class="flex items-center gap-1 md:gap-2">
-          <div
-            class="hidden md:flex items-center gap-2 mr-1 pl-3 pr-4 py-1.5 rounded-full bg-gray-50 border border-gray-100 text-sm text-gray-700"
+          <RouterLink
+            to="/profile"
+            class="hidden md:flex items-center gap-2 mr-1 pl-3 pr-4 py-1.5 rounded-full bg-gray-50 border border-gray-100 text-sm text-gray-700 hover:bg-blue-50 hover:border-blue-200 hover:text-blue-700 transition-all duration-200"
           >
             <User class="w-4 h-4 text-gray-500" />
-            <span class="font-medium truncate max-w-[10rem]">{{ auth.user.firstName }} {{ auth.user.lastName }}</span>
-          </div>
+            <span class="font-medium truncate max-w-[10rem]">{{ auth.user.value?.firstName }} {{ auth.user.value?.lastName }}</span>
+          </RouterLink>
           <button
             type="button"
             @click="handleLogout"
@@ -87,7 +88,7 @@
           </RouterLink>
           <div class="border-t border-gray-100 pt-4 mt-2 flex items-center gap-2 px-4 text-sm text-gray-600">
             <User class="w-4 h-4" />
-            <span>{{ auth.user.firstName }} {{ auth.user.lastName }}</span>
+            <span>{{ auth.user.value?.firstName }} {{ auth.user.value?.lastName }}</span>
           </div>
         </div>
       </div>
@@ -110,6 +111,7 @@ const navItems = [
   { to: '/home', label: 'Baş sahypa', match: 'exact', icon: Home },
   { to: '/courses', label: 'Kurslar', match: 'courses', icon: LayoutGrid },
   { to: '/my-learning', label: 'Meniň kurslarym', match: 'exact', icon: GraduationCap },
+  { to: '/profile', label: 'Profilim', match: 'exact', icon: User },
 ]
 
 function navActive(item) {

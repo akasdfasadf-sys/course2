@@ -162,10 +162,10 @@ const submitted = ref(false)
 const form = ref({ employmentStatus: '', learningGoal: '', discountType: '0', paymentMethod: 'card' })
 
 const userFields = computed(() => [
-  { label: 'Ady', type: 'text', value: auth.user?.firstName },
-  { label: 'Familiýasy', type: 'text', value: auth.user?.lastName },
-  { label: 'E-poçta', type: 'email', value: auth.user?.email },
-  { label: 'Telefon', type: 'tel', value: auth.user?.phone },
+  { label: 'Ady', type: 'text', value: auth.user.value?.firstName },
+  { label: 'Familiýasy', type: 'text', value: auth.user.value?.lastName },
+  { label: 'E-poçta', type: 'email', value: auth.user.value?.email },
+  { label: 'Telefon', type: 'tel', value: auth.user.value?.phone },
 ])
 
 const discounts = [
@@ -188,14 +188,15 @@ const currentPrice = computed(() => {
 })
 
 function handleSubmit() {
+  const courseId = course.value.id
   const enrollments = JSON.parse(localStorage.getItem('enrollments') || '[]')
   enrollments.push({
-    userId: auth.user?.id, courseId: course.value.id,
+    userId: auth.user.value?.id, courseId,
     ...form.value, enrolledDate: new Date().toISOString(), price: currentPrice.value,
   })
   localStorage.setItem('enrollments', JSON.stringify(enrollments))
-  auth.enrollCourse(course.value.id)
+  auth.enrollCourse(courseId)
   submitted.value = true
-  setTimeout(() => router.push(`/course/${course.value.id}/learn`), 2000)
+  setTimeout(() => router.push('/profile'), 2000)
 }
 </script>

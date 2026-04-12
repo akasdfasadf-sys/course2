@@ -29,6 +29,36 @@
         <CategoryFilter :categories="categories" :selected="selectedCat" @select="selectedCat = $event" />
       </div>
 
+      <!-- Dereje filtri + Sortlama -->
+      <div v-bm-reveal:up class="flex flex-wrap items-center gap-2 mb-4 md:mb-6">
+        <div class="flex items-center gap-2 flex-wrap flex-1">
+          <button
+            v-for="lvl in levels"
+            :key="lvl.value"
+            type="button"
+            @click="selectedLevel = selectedLevel === lvl.value ? 'All' : lvl.value"
+            :class="[
+              'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200',
+              selectedLevel === lvl.value
+                ? `${lvl.activeBg} ${lvl.activeText} border-transparent shadow-sm`
+                : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300',
+            ]"
+          >
+            <span>{{ lvl.icon }}</span> {{ lvl.label }}
+          </button>
+        </div>
+        <select
+          v-model="sortBy"
+          class="text-xs md:text-sm border border-gray-200 rounded-xl px-3 py-2 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500/30 cursor-pointer"
+        >
+          <option value="default">Tertip: Adaty</option>
+          <option value="rating">Reýting boýunça</option>
+          <option value="students">Okuwçy sany</option>
+          <option value="price_asc">Baha: Arzan → Gymmat</option>
+          <option value="price_desc">Baha: Gymmat → Arzan</option>
+        </select>
+      </div>
+
       <div class="mb-3 md:mb-4">
         <p class="text-sm md:text-base text-gray-600 font-medium">{{ filtered.length }} kurs tapyldy</p>
       </div>
@@ -59,19 +89,37 @@ import { courses, categories } from '../data/courses'
 
 const search = ref('')
 const selectedCat = ref('All')
+const selectedLevel = ref('All')
+const sortBy = ref('default')
 
-const filtered = computed(() =>
-  courses.filter(c => {
+const levels = [
+  { value: 'Beginner', label: 'Başlangyç', icon: '🟢', activeBg: 'bg-green-100', activeText: 'text-green-700' },
+  { value: 'Intermediate', label: 'Orta', icon: '🟡', activeBg: 'bg-yellow-100', activeText: 'text-yellow-700' },
+  { value: 'Advanced', label: 'Ösen', icon: '🔴', activeBg: 'bg-red-100', activeText: 'text-red-700' },
+]
+
+const filtered = computed(() => {
+  let list = courses.filter(c => {
     const matchCat = selectedCat.value === 'All' || c.categoryTm === selectedCat.value
+    const matchLevel = selectedLevel.value === 'All' || c.level === selectedLevel.value
     const matchSearch =
       c.titleTm.toLowerCase().includes(search.value.toLowerCase()) ||
       c.descriptionTm.toLowerCase().includes(search.value.toLowerCase())
-    return matchCat && matchSearch
-  }),
-)
+    return matchCat && matchLevel && matchSearch
+  })
+
+  if (sortBy.value === 'rating') list = [...list].sort((a, b) => b.rating - a.rating)
+  else if (sortBy.value === 'students') list = [...list].sort((a, b) => b.studentsEnrolled - a.studentsEnrolled)
+  else if (sortBy.value === 'price_asc') list = [...list].sort((a, b) => a.price30 - b.price30)
+  else if (sortBy.value === 'price_desc') list = [...list].sort((a, b) => b.price30 - a.price30)
+
+  return list
+})
 
 function clearFilters() {
   search.value = ''
   selectedCat.value = 'All'
+  selectedLevel.value = 'All'
+  sortBy.value = 'default'
 }
 </script>
