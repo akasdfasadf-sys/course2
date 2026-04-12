@@ -220,7 +220,7 @@
 
             <!-- Instagram -->
             <a
-              href="https://www.instagram.com/akasadfasadf"
+              href="https://www.instagram.com/gosmaca_we_uznuksiz_bilim"
               target="_blank"
               rel="noopener noreferrer"
               title="Instagram"
