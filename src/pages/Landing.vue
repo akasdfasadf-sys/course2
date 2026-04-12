@@ -193,7 +193,7 @@
             <div class="bg-gradient-to-br from-blue-600 to-blue-700 text-white p-2 rounded-xl shadow-lg shadow-blue-900/40">
               <BookOpen class="w-5 h-5" />
             </div>
-            <span class="text-lg font-bold text-white">Bilim Merkezi</span>
+            <span class="text-lg font-bold text-white">Goshmacha We Uznuksiz Bilim Merkezi</span>
           </div>
 
           <!-- Sosial ikonkalar -->
