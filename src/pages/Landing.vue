@@ -74,7 +74,7 @@
             <span class="text-xs md:text-sm font-medium">Türkmenistanyň iň öňdebaryjy onlaýn okuw platformasy</span>
           </div>
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 md:mb-6 leading-[1.1] tracking-tight">
-            Geljekiňizi häzir<br />
+            Geljegiňizi häzir<br />
             <span class="text-blue-100">Döretmäge Başlaň</span>
           </h1>
           <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-50/95 mb-6 md:mb-8 leading-relaxed px-2 max-w-3xl mx-auto">
@@ -171,7 +171,7 @@
     <section class="py-14 md:py-20 relative overflow-hidden bg-gradient-to-br from-[#0056d2] to-indigo-900 text-white">
       <div class="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_30%_20%,white,transparent_50%)]" />
       <div v-bm-reveal:scale class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-4 md:mb-6 tracking-tight">Bilim syýahatyňyzy häzir başlaň!</h2>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-4 md:mb-6 tracking-tight">Bilim syýahatyňyza häzir başlaň!</h2>
         <p class="text-base md:text-xl text-blue-100 mb-6 md:mb-8">Mugt hasaba alnyň we 22 sany hünär kursyna giriň</p>
         <RouterLink
           to="/register"

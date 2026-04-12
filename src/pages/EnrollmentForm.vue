@@ -8,7 +8,7 @@
           <CheckCircle class="w-8 h-8 text-green-600" />
         </div>
         <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Üstünlik!</h2>
-        <p class="text-sm md:text-base text-gray-600 mb-4">Siz "{{ course?.titleTm }}" kursyna üstünlikli ýazylдыňyz.</p>
+        <p class="text-sm md:text-base text-gray-600 mb-4">Siz "{{ course?.titleTm }}" kursa üstünlikli ýazyldyňyz.</p>
         <p class="text-sm text-gray-500">Kursa geçirilýär...</p>
       </div>
     </div>
