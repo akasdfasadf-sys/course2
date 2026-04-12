@@ -234,7 +234,7 @@
 
             <!-- TikTok -->
             <a
-              href="https://www.tiktok.com/@akasadfasadf"
+              href="https://www.tiktok.com/@gosmacaweuznuksizbilim"
               target="_blank"
               rel="noopener noreferrer"
               title="TikTok"
