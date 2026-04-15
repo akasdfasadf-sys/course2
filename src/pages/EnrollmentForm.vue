@@ -38,11 +38,27 @@
               <!-- Personal info -->
               <div>
                 <h2 class="text-base md:text-xl font-semibold text-gray-900 mb-3 md:mb-4">Şahsy maglumatlar</h2>
+                <p class="text-xs text-gray-500 mb-3">Maglumatlary üýtgedip bilersiňiz — ýazylmak üçin ulanylýar.</p>
                 <div class="grid grid-cols-2 gap-3 md:gap-4">
-                  <div v-for="f in userFields" :key="f.label">
-                    <label class="block text-xs md:text-sm font-medium text-gray-700 mb-1 md:mb-2">{{ f.label }}</label>
-                    <input :type="f.type" :value="f.value" disabled
-                      class="w-full px-3 py-2.5 md:px-4 md:py-3 border border-gray-300 rounded-lg bg-gray-50 text-sm md:text-base" />
+                  <div>
+                    <label class="block text-xs md:text-sm font-medium text-gray-700 mb-1 md:mb-2">Ady</label>
+                    <input type="text" v-model="personalInfo.firstName" required
+                      class="w-full px-3 py-2.5 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base bg-white" />
+                  </div>
+                  <div>
+                    <label class="block text-xs md:text-sm font-medium text-gray-700 mb-1 md:mb-2">Familiýasy</label>
+                    <input type="text" v-model="personalInfo.lastName" required
+                      class="w-full px-3 py-2.5 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base bg-white" />
+                  </div>
+                  <div>
+                    <label class="block text-xs md:text-sm font-medium text-gray-700 mb-1 md:mb-2">E-poçta</label>
+                    <input type="email" v-model="personalInfo.email" required
+                      class="w-full px-3 py-2.5 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base bg-white" />
+                  </div>
+                  <div>
+                    <label class="block text-xs md:text-sm font-medium text-gray-700 mb-1 md:mb-2">Telefon</label>
+                    <input type="tel" v-model="personalInfo.phone" required
+                      class="w-full px-3 py-2.5 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base bg-white" />
                   </div>
                 </div>
               </div>
@@ -57,9 +73,10 @@
                       class="w-full px-3 py-2.5 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base">
                       <option value="">Saýlaň</option>
                       <option value="student">Okuwçy</option>
+                        <option value="student">Talyp</option>
                       <option value="employed">Işleýän</option>
                       <option value="unemployed">Işsiz</option>
-                      <option value="self-employed">Öz işi</option>
+                      <option value="self-employed">Businessman</option>
                     </select>
                   </div>
                   <div>
@@ -142,6 +159,7 @@
         </div>
       </div>
     </div>
+    <AppFooter />
   </div>
 </template>
 
@@ -150,6 +168,7 @@ import { ref, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { CheckCircle, CreditCard, Banknote, Building2 } from 'lucide-vue-next'
 import AppHeader from '../components/AppHeader.vue'
+import AppFooter from '../components/AppFooter.vue'
 import { courses } from '../data/courses'
 import { useAuth } from '../stores/auth'
 
@@ -161,12 +180,12 @@ const submitted = ref(false)
 
 const form = ref({ employmentStatus: '', learningGoal: '', discountType: '0', paymentMethod: 'card' })
 
-const userFields = computed(() => [
-  { label: 'Ady', type: 'text', value: auth.user.value?.firstName },
-  { label: 'Familiýasy', type: 'text', value: auth.user.value?.lastName },
-  { label: 'E-poçta', type: 'email', value: auth.user.value?.email },
-  { label: 'Telefon', type: 'tel', value: auth.user.value?.phone },
-])
+const personalInfo = ref({
+  firstName: auth.user.value?.firstName || '',
+  lastName: auth.user.value?.lastName || '',
+  email: auth.user.value?.email || '',
+  phone: auth.user.value?.phone || '',
+})
 
 const discounts = [
   { value: '0', label: 'Arzanladyşsyz', sub: '' },
@@ -187,7 +206,8 @@ const currentPrice = computed(() => {
   return course.value.basePrice
 })
 
-function handleSubmit() {
+async function handleSubmit() {
+  auth.updateUser(personalInfo.value)
   const courseId = course.value.id
   const enrollments = JSON.parse(localStorage.getItem('enrollments') || '[]')
   enrollments.push({
@@ -195,7 +215,7 @@ function handleSubmit() {
     ...form.value, enrolledDate: new Date().toISOString(), price: currentPrice.value,
   })
   localStorage.setItem('enrollments', JSON.stringify(enrollments))
-  auth.enrollCourse(courseId)
+  await auth.enrollCourse(courseId)
   submitted.value = true
   setTimeout(() => router.push('/profile'), 2000)
 }

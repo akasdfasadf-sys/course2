@@ -76,6 +76,7 @@
         </button>
       </div>
     </div>
+    <AppFooter />
   </div>
 </template>
 
@@ -85,6 +86,7 @@ import { Search } from 'lucide-vue-next'
 import AppHeader from '../components/AppHeader.vue'
 import CourseCard from '../components/CourseCard.vue'
 import CategoryFilter from '../components/CategoryFilter.vue'
+import AppFooter from '../components/AppFooter.vue'
 import { courses, categories } from '../data/courses'
 
 const search = ref('')

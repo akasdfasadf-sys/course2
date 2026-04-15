@@ -79,6 +79,7 @@
         </div>
       </div>
     </section>
+    <AppFooter />
   </div>
 </template>
 
@@ -86,6 +87,7 @@
 import { ArrowRight, Users, Award, TrendingUp } from 'lucide-vue-next'
 import AppHeader from '../components/AppHeader.vue'
 import CourseCard from '../components/CourseCard.vue'
+import AppFooter from '../components/AppFooter.vue'
 import { courses } from '../data/courses'
 
 const featured = courses.slice(0, 3)

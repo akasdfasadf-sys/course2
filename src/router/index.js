@@ -33,6 +33,10 @@ const routes = [
     path: '/profile', component: () => import('../pages/Profile.vue'),
     meta: { requiresAuth: true }
   },
+  {
+    path: '/admin', component: () => import('../pages/Admin.vue'),
+    meta: { requiresAuth: true, requiresAdmin: true }
+  },
 ]
 
 const router = createRouter({
@@ -41,10 +45,9 @@ const router = createRouter({
 })
 
 router.beforeEach((to) => {
-  const { isAuthenticated } = useAuth()
-  if (to.meta.requiresAuth && !isAuthenticated()) {
-    return '/login'
-  }
+  const { isAuthenticated, user } = useAuth()
+  if (to.meta.requiresAuth && !isAuthenticated()) return '/login'
+  if (to.meta.requiresAdmin && !user.value?.isAdmin) return '/home'
 })
 
 export default router

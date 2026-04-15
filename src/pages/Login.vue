@@ -74,11 +74,11 @@ const router = useRouter()
 async function handleSubmit() {
   error.value = ''
   loading.value = true
-  const ok = auth.login(email.value, password.value)
-  if (ok) {
+  const result = await auth.login(email.value, password.value)
+  if (result.ok) {
     router.push('/home')
   } else {
-    error.value = 'E-poçta ýa-da parol nädogry'
+    error.value = result.message || 'E-poçta ýa-da parol nädogry'
   }
   loading.value = false
 }

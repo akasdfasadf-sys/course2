@@ -34,6 +34,7 @@
         </RouterLink>
       </div>
     </div>
+    <AppFooter />
   </div>
 </template>
 
@@ -42,6 +43,7 @@ import { computed } from 'vue'
 import { BookOpen } from 'lucide-vue-next'
 import AppHeader from '../components/AppHeader.vue'
 import CourseCard from '../components/CourseCard.vue'
+import AppFooter from '../components/AppFooter.vue'
 import { courses } from '../data/courses'
 import { useAuth } from '../stores/auth'
 

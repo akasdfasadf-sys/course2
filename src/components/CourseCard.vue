@@ -4,11 +4,16 @@
       class="bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-[var(--bm-shadow-card)] h-full flex flex-col transition-all duration-300 ease-out group-hover:shadow-[var(--bm-shadow-card-hover)] group-hover:-translate-y-1.5 group-hover:border-blue-200/60 ring-0 group-hover:ring-2 group-hover:ring-blue-500/10"
     >
       <div class="relative aspect-video overflow-hidden flex-shrink-0 bg-slate-100">
+        <!-- Gradient fallback - internet bolmasa görünýär -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center" :class="categoryGradient">
+          <span class="text-4xl mb-2">{{ categoryIcon }}</span>
+          <span class="text-white/90 text-xs font-semibold px-3 text-center line-clamp-2">{{ course.titleTm }}</span>
+        </div>
         <img
           :src="course.thumbnail"
           :alt="course.titleTm"
-          class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.06]"
-          @error="e => (e.target.src = 'https://placehold.co/400x225?text=Kurs')"
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.06]"
+          @error="e => e.target.style.display='none'"
         />
         <div
           v-if="isEnrolled && course.progress > 0"
@@ -84,4 +89,20 @@ import { useAuth } from '../stores/auth'
 const props = defineProps({ course: Object })
 const auth = useAuth()
 const isEnrolled = computed(() => auth.user.value?.enrolledCourses?.includes(props.course.id))
+
+const categoryMap = {
+  'Programirlemek':            { gradient: 'bg-gradient-to-br from-blue-600 to-indigo-700',   icon: '💻' },
+  'Diller':                    { gradient: 'bg-gradient-to-br from-green-500 to-teal-600',     icon: '🗣️' },
+  'Matematika':                { gradient: 'bg-gradient-to-br from-purple-600 to-violet-700',  icon: '🔢' },
+  'Ylymlar':                   { gradient: 'bg-gradient-to-br from-orange-500 to-red-600',     icon: '🔬' },
+  'Mugallymçylyk we pedagogika': { gradient: 'bg-gradient-to-br from-pink-500 to-rose-600',   icon: '👨‍🏫' },
+  'Kompýuter endikleri':       { gradient: 'bg-gradient-to-br from-cyan-500 to-blue-600',      icon: '🖥️' },
+}
+
+const categoryGradient = computed(() =>
+  categoryMap[props.course.categoryTm]?.gradient || 'bg-gradient-to-br from-slate-600 to-gray-700'
+)
+const categoryIcon = computed(() =>
+  categoryMap[props.course.categoryTm]?.icon || '📚'
+)
 </script>

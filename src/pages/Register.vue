@@ -164,11 +164,11 @@ async function handleSubmit() {
   }
   loading.value = true
   const { confirmPassword, password, ...userData } = form.value
-  const ok = auth.register(userData)
-  if (ok) {
+  const result = await auth.register({ ...userData, password })
+  if (result.ok) {
     router.push('/home')
   } else {
-    error.value = 'Bu e-poçta eýýäm ulanylypdyr'
+    error.value = result.message || 'Ýalňyşlyk ýüze çykdy'
   }
   loading.value = false
 }

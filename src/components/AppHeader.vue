@@ -97,9 +97,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { BookOpen, User, LogOut, Menu, X, Home, GraduationCap, LayoutGrid } from 'lucide-vue-next'
+import { BookOpen, User, LogOut, Menu, X, Home, GraduationCap, LayoutGrid, ShieldCheck } from 'lucide-vue-next'
 import { useAuth } from '../stores/auth'
 
 const auth = useAuth()
@@ -107,12 +107,13 @@ const router = useRouter()
 const route = useRoute()
 const menuOpen = ref(false)
 
-const navItems = [
+const navItems = computed(() => [
   { to: '/home', label: 'Baş sahypa', match: 'exact', icon: Home },
   { to: '/courses', label: 'Kurslar', match: 'courses', icon: LayoutGrid },
   { to: '/my-learning', label: 'Meniň kurslarym', match: 'exact', icon: GraduationCap },
   { to: '/profile', label: 'Profilim', match: 'exact', icon: User },
-]
+  ...(auth.user.value?.isAdmin ? [{ to: '/admin', label: 'Admin', match: 'exact', icon: ShieldCheck }] : []),
+])
 
 function navActive(item) {
   if (item.match === 'courses') {

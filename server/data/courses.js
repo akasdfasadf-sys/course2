@@ -1,4 +1,4 @@
-export const categories = [
+﻿const categories = [
   { id: '1', name: 'Teaching & Pedagogy', nameTm: 'Mugallymçylyk we pedagogika', icon: 'GraduationCap' },
   { id: '2', name: 'Programming', nameTm: 'Programirlemek', icon: 'Code' },
   { id: '3', name: 'Mathematics', nameTm: 'Matematika', icon: 'Calculator' },
@@ -7,7 +7,7 @@ export const categories = [
   { id: '6', name: 'Computer Skills', nameTm: 'Kompýuter endikleri', icon: 'Monitor' },
 ]
 
-export const courses = [
+const courses = [
   {
     id: '1', title: 'Teaching Work and Pedagogical Technology',
     titleTm: 'Mugallymçylyk işi we pedagogik tehnologiýa',
@@ -15,7 +15,7 @@ export const courses = [
     descriptionTm: 'Häzirki zaman mugallymçylyk usullary we pedagogik tehnologiýalar boýunça giňişleýin kurs.',
     instructor: 'Aziza Nurlyýewa',
     instructorAvatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&fit=crop', // teaching
+    thumbnail: 'https://images.unsplash.com/photo-1649920442906-3c8ef428fb6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
     category: 'Teaching & Pedagogy', categoryTm: 'Mugallymçylyk we pedagogika',
     level: 'Intermediate', rating: 4.9, studentsEnrolled: 450,
     basePrice: 2500, price15: 2125, price30: 1750, weeks: 18,
@@ -27,7 +27,9 @@ export const courses = [
     descriptionTm: 'Windows, Office programmalary we internet esaslary ýaly möhüm kompýuter endiklerini öwreniň.',
     instructor: 'Merdan Annaýew',
     instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&fit=crop', // computer literacy
+    thumbnail: 'https://images.unsplash.com/photo-1670552510085-c9252d41d766?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Computer Skills', categoryTm: 'Kompýuter endikleri',
+    level: 'Beginner', rating: 4.7, studentsEnrolled: 680,
     basePrice: 783, price15: 665, price30: 549, weeks: 9,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -37,7 +39,7 @@ export const courses = [
     descriptionTm: 'Algebra, geometriýa we kalkulus ýaly esaslardan ösen mowzuklara çenli doly matematika kursy.',
     instructor: 'Gülnar Baýramowa',
     instructorAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&fit=crop', // mathematics
+    thumbnail: 'https://images.unsplash.com/photo-1718306201865-cae4a08311fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
     category: 'Mathematics', categoryTm: 'Matematika',
     level: 'Intermediate', rating: 4.8, studentsEnrolled: 520,
     basePrice: 1050, price15: 893, price30: 735, weeks: 12,
@@ -49,7 +51,9 @@ export const courses = [
     descriptionTm: 'Mehanika, termodinamika, elektromagnetizm we häzirki zaman fizikasyny öz içine alýan giňişleýin fizika kursy.',
     instructor: 'Döwran Gurbanow',
     instructorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=800&fit=crop', // physics
+    thumbnail: 'https://images.unsplash.com/photo-1608037222011-cbf484177126?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Sciences', categoryTm: 'Ylymlar',
+    level: 'Intermediate', rating: 4.8, studentsEnrolled: 380,
     basePrice: 1050, price15: 893, price30: 735, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -59,7 +63,9 @@ export const courses = [
     descriptionTm: 'Öýjük biologiýasyndan ekologiýa we adam anatomiýasyna çenli janly organizmleri öwrenmek.',
     instructor: 'Maýsa Kerimowa',
     instructorAvatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&fit=crop', // biology
+    thumbnail: 'https://images.unsplash.com/photo-1608037222011-cbf484177126?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Sciences', categoryTm: 'Ylymlar',
+    level: 'Intermediate', rating: 4.7, studentsEnrolled: 340,
     basePrice: 1050, price15: 893, price30: 735, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -69,7 +75,9 @@ export const courses = [
     descriptionTm: 'Organiki, inorganiki we fiziki himiýany öz içine alýan doly himiýa kursy.',
     instructor: 'Batyr Orazow',
     instructorAvatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&fit=crop', // chemistry
+    thumbnail: 'https://images.unsplash.com/photo-1608037222011-cbf484177126?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Sciences', categoryTm: 'Ylymlar',
+    level: 'Intermediate', rating: 4.8, studentsEnrolled: 310,
     basePrice: 1050, price15: 893, price30: 735, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -79,7 +87,9 @@ export const courses = [
     descriptionTm: 'Sanly özgerişme, elektron söwda, fintech we häzirki zaman sanly ykdysadyýet barada öwreniň.',
     instructor: 'Aýna Halmyradowa',
     instructorAvatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&fit=crop', // digital economy
+    thumbnail: 'https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Computer Skills', categoryTm: 'Kompýuter endikleri',
+    level: 'Intermediate', rating: 4.7, studentsEnrolled: 290,
     basePrice: 1050, price15: 893, price30: 735, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -89,7 +99,9 @@ export const courses = [
     descriptionTm: 'Esaslardan başlangyç derejeli aragatnaşyk endiklerine çenli iňlis dili öwreniň.',
     instructor: 'Emma Williams',
     instructorAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800&fit=crop', // english beginner
+    thumbnail: 'https://images.unsplash.com/photo-1565022536102-f7645c84354a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Languages', categoryTm: 'Diller',
+    level: 'Beginner', rating: 4.9, studentsEnrolled: 750,
     basePrice: 1050, price15: 893, price30: 735, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -99,7 +111,9 @@ export const courses = [
     descriptionTm: 'Söhbetdeşlik we ýazmaga ünsi jemläp, iňlis dili endikleriňizi orta derejä çenli ösdüriň.',
     instructor: 'James Anderson',
     instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&fit=crop', // english intermediate
+    thumbnail: 'https://images.unsplash.com/photo-1565022536102-f7645c84354a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Languages', categoryTm: 'Diller',
+    level: 'Intermediate', rating: 4.8, studentsEnrolled: 620,
     basePrice: 1163, price15: 988, price30: 814, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -109,7 +123,9 @@ export const courses = [
     descriptionTm: 'Hiragana, Katakana we esasy grammatika ýaly ýapon dili we medeniýetini noldan öwrenmäge başlaň.',
     instructor: 'Yuki Tanaka',
     instructorAvatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&fit=crop', // japanese I
+    thumbnail: 'https://images.unsplash.com/photo-1769321725386-018acef972c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Languages', categoryTm: 'Diller',
+    level: 'Beginner', rating: 4.9, studentsEnrolled: 340,
     basePrice: 1600, price15: 1360, price30: 1120, weeks: 20,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -119,7 +135,9 @@ export const courses = [
     descriptionTm: 'Orta derejeli grammatika, Kanži we söhbetdeşlik tejribesi bilen ýapon dili okuwlaryny dowam ediň.',
     instructor: 'Haruto Suzuki',
     instructorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1480796927426-f609979314bd?w=800&fit=crop', // japanese II
+    thumbnail: 'https://images.unsplash.com/photo-1769321725386-018acef972c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Languages', categoryTm: 'Diller',
+    level: 'Intermediate', rating: 4.8, studentsEnrolled: 280,
     basePrice: 1505, price15: 1280, price30: 1054, weeks: 19,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -129,7 +147,9 @@ export const courses = [
     descriptionTm: 'Başlangyç üçin koreý elipbiýini (Hangul), esasy grammatikany we möhüm sözlemleri öwreniň.',
     instructor: 'Min-jun Kim',
     instructorAvatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=800&fit=crop', // korean
+    thumbnail: 'https://images.unsplash.com/photo-1565022536102-f7645c84354a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Languages', categoryTm: 'Diller',
+    level: 'Beginner', rating: 4.7, studentsEnrolled: 420,
     basePrice: 1000, price15: 850, price30: 700, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -139,7 +159,9 @@ export const courses = [
     descriptionTm: 'C++ programirlemesini esaslardan OOP we maglumat gurluşlary ýaly ösen düşünjelere çenli öwreniň.',
     instructor: 'Kerim Baýramow',
     instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&fit=crop', // c++
+    thumbnail: 'https://images.unsplash.com/photo-1675495277087-10598bf7bcd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Programming', categoryTm: 'Programirlemek',
+    level: 'Beginner', rating: 4.9, studentsEnrolled: 560,
     basePrice: 1500, price15: 1275, price30: 1050, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -149,7 +171,9 @@ export const courses = [
     descriptionTm: 'Başlangyç üçin amaly taslamalar we maşklar bilen Python programirlemesini öwreniň.',
     instructor: 'Selbi Gurbanowa',
     instructorAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=800&fit=crop', // python
+    thumbnail: 'https://images.unsplash.com/photo-1675495277087-10598bf7bcd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Programming', categoryTm: 'Programirlemek',
+    level: 'Beginner', rating: 4.9, studentsEnrolled: 720,
     basePrice: 1500, price15: 1275, price30: 1050, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -159,7 +183,9 @@ export const courses = [
     descriptionTm: 'Netijeli programirlemek we meseläni çözmek üçin möhüm maglumat gurluşlaryny we algoritmleri öwreniň.',
     instructor: 'Myrat Annaýew',
     instructorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&fit=crop', // data structures
+    thumbnail: 'https://images.unsplash.com/photo-1675495277087-10598bf7bcd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Programming', categoryTm: 'Programirlemek',
+    level: 'Intermediate', rating: 4.8, studentsEnrolled: 480,
     basePrice: 2006, price15: 1705, price30: 1405, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -169,7 +195,9 @@ export const courses = [
     descriptionTm: 'Gözel web sahypalaryny döretmek üçin HTML, CSS, JavaScript we häzirki zaman front-end çarçuwalaryny öwreniň.',
     instructor: 'Jennet Täçmyradowa',
     instructorAvatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&fit=crop', // frontend
+    thumbnail: 'https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Programming', categoryTm: 'Programirlemek',
+    level: 'Intermediate', rating: 4.9, studentsEnrolled: 640,
     basePrice: 2006, price15: 1705, price30: 1405, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -179,7 +207,9 @@ export const courses = [
     descriptionTm: 'Node.js, maglumat bazalary we API ösüşi bilen güýçli serwer tarapdaky programmalaryny dörediň.',
     instructor: 'Döwlet Hojagulyyew',
     instructorAvatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&fit=crop', // backend
+    thumbnail: 'https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Programming', categoryTm: 'Programirlemek',
+    level: 'Intermediate', rating: 4.8, studentsEnrolled: 530,
     basePrice: 2006, price15: 1705, price30: 1405, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -189,7 +219,9 @@ export const courses = [
     descriptionTm: 'Flutter we Dart ulanyp, iOS we Android üçin platform-aralyk ykjam programmalary dörediň.',
     instructor: 'Bahar Gurbanova',
     instructorAvatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&fit=crop', // flutter I
+    thumbnail: 'https://images.unsplash.com/photo-1675495277087-10598bf7bcd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Programming', categoryTm: 'Programirlemek',
+    level: 'Intermediate', rating: 4.9, studentsEnrolled: 490,
     basePrice: 2120, price15: 1802, price30: 1484, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -199,7 +231,9 @@ export const courses = [
     descriptionTm: 'Döwlet dolandyryşy, animasiýalar we önümçilik ýerleşdirmegi öz içine alýan öňdebaryjy Flutter ösüşi.',
     instructor: 'Nurberdi Saparow',
     instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=800&fit=crop', // flutter II
+    thumbnail: 'https://images.unsplash.com/photo-1675495277087-10598bf7bcd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Programming', categoryTm: 'Programirlemek',
+    level: 'Advanced', rating: 4.9, studentsEnrolled: 380,
     basePrice: 2408, price15: 2047, price30: 1686, weeks: 16,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -209,7 +243,9 @@ export const courses = [
     descriptionTm: 'Buýruk setiri, ulgam dolandyryşy we howpsuzlyk gurallary ýaly kiberhowpsuzlyk üçin Linux-y öwreniň.',
     instructor: 'Berdi Myradow',
     instructorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&fit=crop', // linux
+    thumbnail: 'https://images.unsplash.com/photo-1675495277087-10598bf7bcd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Programming', categoryTm: 'Programirlemek',
+    level: 'Intermediate', rating: 4.8, studentsEnrolled: 350,
     basePrice: 2406, price15: 2045, price30: 1685, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -219,7 +255,9 @@ export const courses = [
     descriptionTm: 'Tor howpsuzlygy, kriptografiýa we etiki hacking ýaly kiberhowpsuzlygyň esaslaryny öwreniň.',
     instructor: 'Aýbolek Geldimyradowa',
     instructorAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&fit=crop', // cybersecurity
+    thumbnail: 'https://images.unsplash.com/photo-1670552510085-c9252d41d766?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+    category: 'Programming', categoryTm: 'Programirlemek',
+    level: 'Advanced', rating: 4.9, studentsEnrolled: 410,
     basePrice: 2806, price15: 2385, price30: 1965, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
@@ -229,10 +267,12 @@ export const courses = [
     descriptionTm: 'Oýunlar, animasiýa we wizualizasiýa üçin 3D modellemäni, teksturlary we render öwreniň.',
     instructor: 'Şamyrat Öwezow',
     instructorAvatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1617042375876-a13e36732a04?w=800&fit=crop', // 3d modeling
+    thumbnail: 'https://images.unsplash.com/photo-1664520132859-727fc515fc8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
     category: 'Computer Skills', categoryTm: 'Kompýuter endikleri',
     level: 'Intermediate', rating: 4.8, studentsEnrolled: 460,
     basePrice: 2406, price15: 2045, price30: 1685, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, lessons: [],
   },
 ]
+
+module.exports = { courses, categories }

@@ -121,17 +121,28 @@
 
       </div>
     </div>
+    <AppFooter />
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { User, Mail, Phone, BookOpen, GraduationCap, Award, TrendingUp, Calendar } from 'lucide-vue-next'
 import AppHeader from '../components/AppHeader.vue'
+import AppFooter from '../components/AppFooter.vue'
 import { courses } from '../data/courses'
 import { useAuth } from '../stores/auth'
+import api from '../services/api'
 
 const auth = useAuth()
+const apiEnrollments = ref([])
+
+onMounted(async () => {
+  try {
+    const { data } = await api.get('/enrollments/my')
+    apiEnrollments.value = data
+  } catch {}
+})
 
 const fullName = computed(() => `${auth.user.value?.firstName || ''} ${auth.user.value?.lastName || ''}`.trim())
 const initials = computed(() => {
@@ -140,9 +151,17 @@ const initials = computed(() => {
   return (f + l).toUpperCase() || '?'
 })
 
-const enrolledCourses = computed(() =>
-  courses.filter(c => auth.user.value?.enrolledCourses?.includes(c.id))
-)
+const enrolledCourses = computed(() => {
+  // API-dan gelen ýazylmalar bar bolsa şony ulan, ýok bolsa localStorage
+  const ids = apiEnrollments.value.length
+    ? apiEnrollments.value.map(e => e.courseId)
+    : (auth.user.value?.enrolledCourses || [])
+  return courses.filter(c => ids.includes(c.id)).map(c => {
+    const enrollment = apiEnrollments.value.find(e => e.courseId === c.id)
+    return { ...c, progress: enrollment?.progress || c.progress || 0 }
+  })
+})
+
 const completedCount = computed(() => enrolledCourses.value.filter(c => (c.progress || 0) >= 100).length)
 
 const infoFields = computed(() => [
@@ -150,7 +169,9 @@ const infoFields = computed(() => [
   { label: 'Familiýasy', value: auth.user.value?.lastName, icon: User },
   { label: 'E-poçta', value: auth.user.value?.email, icon: Mail },
   { label: 'Telefon', value: auth.user.value?.phone, icon: Phone },
-  { label: 'Hasaba alnan senesi', value: auth.user.value?.id ? new Date(Number(auth.user.value.id)).toLocaleDateString('tk-TM') : '—', icon: Calendar },
+  { label: 'Hasaba alnan senesi', value: auth.user.value?.createdAt
+    ? new Date(auth.user.value.createdAt).toLocaleDateString('tk-TM')
+    : auth.user.value?.id ? new Date(Number(auth.user.value.id)).toLocaleDateString('tk-TM') : '—', icon: Calendar },
 ])
 
 const stats = computed(() => [
