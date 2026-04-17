@@ -34,10 +34,6 @@ const routes = [
     path: '/profile', component: () => import('../pages/Profile.vue'),
     meta: { requiresAuth: true }
   },
-  {
-    path: '/admin', component: () => import('../pages/Admin.vue'),
-    meta: { requiresAuth: true, requiresAdmin: true }
-  },
 ]
 
 const router = createRouter({
