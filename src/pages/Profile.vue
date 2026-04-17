@@ -132,13 +132,13 @@ import AppHeader from '../components/AppHeader.vue'
 import AppFooter from '../components/AppFooter.vue'
 import { courses } from '../data/courses'
 import { useAuth } from '../stores/auth'
-import api from '../services/api'
 
 const auth = useAuth()
 const apiEnrollments = ref([])
 
 onMounted(async () => {
   try {
+    const { default: api } = await import('../services/api')
     const { data } = await api.get('/enrollments/my')
     apiEnrollments.value = data
   } catch {}

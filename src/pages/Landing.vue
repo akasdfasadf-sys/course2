@@ -99,26 +99,6 @@
       </div>
     </section>
 
-    <!-- Stats -->
-    <section class="py-10 md:py-16 bg-gradient-to-b from-slate-50 to-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-          <div
-            v-for="(s, idx) in stats"
-            :key="s.label"
-            v-bm-reveal:up="idx * 80"
-            class="text-center p-4 md:p-6 rounded-2xl bg-white border border-gray-100 shadow-[var(--bm-shadow-card)] hover:shadow-[var(--bm-shadow-card-hover)] transition-all duration-300 hover:-translate-y-1"
-          >
-            <div :class="`inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 ${s.bg} rounded-2xl mb-3 md:mb-4`">
-              <component :is="s.icon" :class="`w-6 h-6 md:w-8 md:h-8 ${s.color}`" />
-            </div>
-            <p class="text-2xl md:text-4xl font-extrabold text-gray-900 mb-1 md:mb-2 tabular-nums">{{ s.value }}</p>
-            <p class="text-sm md:text-base text-gray-600 font-medium">{{ s.label }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Features -->
     <section class="py-12 md:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -188,7 +168,7 @@
 
 <script setup>
 import { ref, inject, watch, computed, onMounted, onUnmounted } from 'vue'
-import { BookOpen, Users, Award, Clock, CheckCircle, ArrowRight } from 'lucide-vue-next'
+import { BookOpen, CheckCircle, ArrowRight } from 'lucide-vue-next'
 import AppFooter from '../components/AppFooter.vue'
 
 const bmLenis = inject('bmLenis')
@@ -233,13 +213,6 @@ onUnmounted(() => {
   offParallax()
   window.removeEventListener('scroll', onScroll)
 })
-
-const stats = [
-  { value: '22', label: 'Hünär kurslary', icon: BookOpen, bg: 'bg-blue-100', color: 'text-blue-600' },
-  { value: '5000+', label: 'Aktiwçi okuwçylar', icon: Users, bg: 'bg-green-100', color: 'text-green-600' },
-  { value: '95%', label: 'Üstünlik derejesi', icon: Award, bg: 'bg-purple-100', color: 'text-purple-600' },
-  { value: '24/7', label: 'Elýeterli okuw', icon: Clock, bg: 'bg-orange-100', color: 'text-orange-600' },
-]
 
 const features = [
   { title: 'Hünärmen mugallymlar', desc: 'Tejribeli we bilimli mugallymlardan sapak alyň. Her mugallym öz ugrunda hünärmendir.', bg: 'bg-blue-100', color: 'text-blue-600' },

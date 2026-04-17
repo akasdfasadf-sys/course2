@@ -13,14 +13,17 @@ export function useAuth() {
 
   const login = async (email, password) => {
     const users = JSON.parse(localStorage.getItem('users') || '[]')
-    const found = users.find(u => u.email === email && u.password === password)
-    if (found) {
-      const { password: _, ...safeUser } = found
-      state.user = safeUser
-      localStorage.setItem('currentUser', JSON.stringify(safeUser))
-      return { ok: true }
+    // email bilen tap
+    const found = users.find(u => u.email === email)
+    if (!found) return { ok: false, message: 'Bu e-poçta bilen hasap tapylmady' }
+    // parol barlag - parol ýok bolsa (köne hasap) hem geçir
+    if (found.password && found.password !== password) {
+      return { ok: false, message: 'Parol nädogry' }
     }
-    return { ok: false, message: 'E-poçta ýa-da parol nädogry' }
+    const { password: _, ...safeUser } = found
+    state.user = safeUser
+    localStorage.setItem('currentUser', JSON.stringify(safeUser))
+    return { ok: true }
   }
 
   const register = async (userData) => {

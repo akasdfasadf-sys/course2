@@ -97,6 +97,7 @@ import { BookOpen, Phone, MapPin } from 'lucide-vue-next'
 
 const footerLinks = [
   { to: '/', label: 'Baş Sahypa' },
+  { to: '/about', label: 'Biz barada' },
   { to: '/courses', label: 'Kurslar' },
   { to: '/login', label: 'Giriş' },
   { to: '/register', label: 'Hasaba alyň' },

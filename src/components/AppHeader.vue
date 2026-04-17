@@ -109,6 +109,7 @@ const menuOpen = ref(false)
 
 const navItems = computed(() => [
   { to: '/home', label: 'Baş sahypa', match: 'exact', icon: Home },
+  { to: '/about', label: 'Biz barada', match: 'exact', icon: BookOpen },
   { to: '/courses', label: 'Kurslar', match: 'courses', icon: LayoutGrid },
   { to: '/my-learning', label: 'Meniň kurslarym', match: 'exact', icon: GraduationCap },
   { to: '/profile', label: 'Profilim', match: 'exact', icon: User },

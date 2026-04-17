@@ -99,6 +99,116 @@ const finalQuestions = [
 ]
 
 export const courseSections = {
+  // Iňlis dili Beginner (kurs id: '12') - Headway Beginner kitaby
+  // Hepde 3 gezek, her 6 unitden Midterm, soňunda Final
+  '12': [
+    {
+      id: 'en_intro',
+      title: '📚 Kursa giriş',
+      duration: '30 min',
+      lessons: [
+        { id: 'en_l0', title: 'Kursa giriş we Headway kitaby bilen tanyşlyk', duration: '10:00', type: 'video', completed: false, preview: true, videoUrl: FREE_VIDEO, description: 'Headway Beginner kitaby, kursyň gurluşy we öwreniş usuly bilen tanyşarsyňyz.' },
+        { id: 'en_l0b', title: 'Iňlis elipbiýi we aýdylyşy', duration: '15:00', type: 'video', completed: false, preview: true, videoUrl: FREE_VIDEO, description: 'Iňlis elipbiýiniň 26 harpy we olaryň dogry aýdylyşy.' },
+      ],
+    },
+    {
+      id: 'en_u1_3',
+      title: '📖 Unit 1-3: Hello! / Meeting people / Numbers',
+      duration: '3 hepde (9 sapak)',
+      lessons: [
+        { id: 'en_u1a', title: 'Unit 1 - Hello! Greetings (Salam bermek)', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Hello, Hi, Good morning/afternoon/evening. Özüňi tanatmak.' },
+        { id: 'en_u1b', title: 'Unit 1 - Am/Is/Are (To be)', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'I am, You are, He/She is - esasy grammatika.' },
+        { id: 'en_u1c', title: 'Unit 1 - Söhbetdeşlik tejribesi', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Hepde 3-nji sapak: Söhbetdeşlik we ýazuw maşklary.' },
+        { id: 'en_u2a', title: 'Unit 2 - Countries and nationalities', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Ýurtlar we milletler. Where are you from?' },
+        { id: 'en_u2b', title: 'Unit 2 - Jobs and occupations', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Hünärler: teacher, doctor, engineer...' },
+        { id: 'en_u2c', title: 'Unit 2 - Söhbetdeşlik we ýazuw', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Hepde 3-nji sapak: Amaly maşklar.' },
+        { id: 'en_u3a', title: 'Unit 3 - Numbers 1-100', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Sanlar, telefon belgisi, ýaş.' },
+        { id: 'en_u3b', title: 'Unit 3 - Family members', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Maşgala agzalary: mother, father, sister, brother...' },
+        { id: 'en_u3c', title: 'Unit 3 - Söhbetdeşlik we gaýtalama', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Unit 1-3 gaýtalama we söhbetdeşlik.' },
+      ],
+    },
+    {
+      id: 'en_midterm1',
+      title: '🎯 Midterm 1 - Unit 1-3 (6 unit soňy)',
+      duration: '45 min',
+      lessons: [
+        { id: 'en_mt1', title: 'Midterm 1 Synag - Unit 1-3', duration: '45 min', type: 'exam', completed: false, preview: false, videoUrl: null, description: 'Unit 1-3 boýunça ýarym ýyl synagy. Grammatika, sözlük we söhbetdeşlik.' },
+      ],
+    },
+    {
+      id: 'en_u4_6',
+      title: '📖 Unit 4-6: Daily life / Food / Free time',
+      duration: '3 hepde (9 sapak)',
+      lessons: [
+        { id: 'en_u4a', title: 'Unit 4 - Daily routines (Gündelik durmuş)', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Present Simple: I wake up, I go to work...' },
+        { id: 'en_u4b', title: 'Unit 4 - Present Simple (Häzirki zaman)', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'He works, She lives - 3-nji şahs.' },
+        { id: 'en_u4c', title: 'Unit 4 - Söhbetdeşlik', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Gündelik durmuş barada söhbetdeşlik.' },
+        { id: 'en_u5a', title: 'Unit 5 - Food and drink', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Iýmit we içgi atlary. I like/I dont like.' },
+        { id: 'en_u5b', title: 'Unit 5 - Countable/Uncountable nouns', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Sanalyp we sanalmaýan atlar.' },
+        { id: 'en_u5c', title: 'Unit 5 - Restoran söhbetdeşligi', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Restoranda sargyt etmek.' },
+        { id: 'en_u6a', title: 'Unit 6 - Free time activities', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Boş wagt işleri. I enjoy, I love, I hate...' },
+        { id: 'en_u6b', title: 'Unit 6 - Can/Cant (Başarjak/Başarmaýan)', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'I can swim, She cant drive.' },
+        { id: 'en_u6c', title: 'Unit 6 - Gaýtalama we söhbetdeşlik', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Unit 4-6 gaýtalama.' },
+      ],
+    },
+    {
+      id: 'en_midterm2',
+      title: '🎯 Midterm 2 - Unit 4-6',
+      duration: '45 min',
+      lessons: [
+        { id: 'en_mt2', title: 'Midterm 2 Synag - Unit 4-6', duration: '45 min', type: 'exam', completed: false, preview: false, videoUrl: null, description: 'Unit 4-6 boýunça ikinji ýarym ýyl synagy.' },
+      ],
+    },
+    {
+      id: 'en_u7_9',
+      title: '📖 Unit 7-9: Past / Travel / Shopping',
+      duration: '3 hepde (9 sapak)',
+      lessons: [
+        { id: 'en_u7a', title: 'Unit 7 - Past Simple (Geçen zaman)', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'I went, She saw, They played - geçen zaman.' },
+        { id: 'en_u7b', title: 'Unit 7 - Irregular verbs (Düzgünsiz işlikler)', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'go-went, see-saw, eat-ate...' },
+        { id: 'en_u7c', title: 'Unit 7 - Geçen wagt barada gürrüň', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Geçen wakalar barada söhbetdeşlik.' },
+        { id: 'en_u8a', title: 'Unit 8 - Travel and transport', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Syýahat we ulag. By bus, by plane, by train.' },
+        { id: 'en_u8b', title: 'Unit 8 - Directions (Ugur görkezmek)', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Turn left, go straight, take the second right.' },
+        { id: 'en_u8c', title: 'Unit 8 - Syýahat söhbetdeşligi', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Syýahat barada söhbetdeşlik.' },
+        { id: 'en_u9a', title: 'Unit 9 - Shopping (Söwda)', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Söwda etmek. How much is it? Its too expensive.' },
+        { id: 'en_u9b', title: 'Unit 9 - Clothes and colours', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Egin-eşik atlary we reňkler.' },
+        { id: 'en_u9c', title: 'Unit 9 - Gaýtalama', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Unit 7-9 gaýtalama we söhbetdeşlik.' },
+      ],
+    },
+    {
+      id: 'en_midterm3',
+      title: '🎯 Midterm 3 - Unit 7-9',
+      duration: '45 min',
+      lessons: [
+        { id: 'en_mt3', title: 'Midterm 3 Synag - Unit 7-9', duration: '45 min', type: 'exam', completed: false, preview: false, videoUrl: null, description: 'Unit 7-9 boýunça üçünji ýarym ýyl synagy.' },
+      ],
+    },
+    {
+      id: 'en_u10_12',
+      title: '📖 Unit 10-12: Future / Health / Review',
+      duration: '3 hepde (9 sapak)',
+      lessons: [
+        { id: 'en_u10a', title: 'Unit 10 - Future plans (Geljek meýilnamalar)', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Going to + infinitive. Im going to study.' },
+        { id: 'en_u10b', title: 'Unit 10 - Will (Geljek zaman)', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'I will, She will - geljek zaman.' },
+        { id: 'en_u10c', title: 'Unit 10 - Geljek barada söhbetdeşlik', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Geljek meýilnamalar barada gürrüň.' },
+        { id: 'en_u11a', title: 'Unit 11 - Health and body', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Beden agzalary we saglyk. I have a headache.' },
+        { id: 'en_u11b', title: 'Unit 11 - Should/Shouldnt', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'You should rest. You shouldnt eat too much.' },
+        { id: 'en_u11c', title: 'Unit 11 - Lukman söhbetdeşligi', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Lukman bilen söhbetdeşlik.' },
+        { id: 'en_u12a', title: 'Unit 12 - Kursyň jemi gaýtalamasy', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Ähli grammatika we sözlük gaýtalamasy.' },
+        { id: 'en_u12b', title: 'Unit 12 - Doly söhbetdeşlik tejribesi', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Doly söhbetdeşlik - ähli mowzuklar.' },
+        { id: 'en_u12c', title: 'Final synaga taýýarlyk', duration: '45:00', type: 'video', completed: false, preview: false, videoUrl: null, description: 'Final synaga taýýarlyk - soraglar we jogaplar.' },
+      ],
+    },
+    {
+      id: 'en_final',
+      title: '🏆 Final Synag - Ähli kurs',
+      duration: '1 sagat',
+      isFinal: true,
+      lessons: [
+        { id: 'en_final1', title: 'Final Synag - Headway Beginner', duration: '60 min', type: 'exam', completed: false, preview: false, videoUrl: null, description: 'Ähli kurs boýunça jemleýji synag. Grammatika, sözlük, okamak we ýazmak.' },
+      ],
+    },
+  ],
   default: [
     {
       id: 's1',

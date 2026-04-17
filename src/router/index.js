@@ -3,6 +3,7 @@ import { useAuth } from '../stores/auth'
 
 const routes = [
   { path: '/', component: () => import('../pages/Landing.vue') },
+  { path: '/about', component: () => import('../pages/About.vue') },
   { path: '/login', component: () => import('../pages/Login.vue') },
   { path: '/register', component: () => import('../pages/Register.vue') },
   {
