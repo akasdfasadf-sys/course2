@@ -22,28 +22,6 @@
           </span>
         </RouterLink>
         <div class="flex items-center gap-2 md:gap-3">
-          <RouterLink
-            to="/login"
-            class="px-3 md:px-4 py-2 text-sm md:text-base font-semibold rounded-xl transition-all duration-200 active:scale-[0.98]"
-            :class="
-              scrolled
-                ? 'text-gray-700 hover:bg-gray-100'
-                : 'text-white/95 hover:bg-white/15 border border-white/20'
-            "
-          >
-            Giriş
-          </RouterLink>
-          <RouterLink
-            to="/register"
-            class="px-3 md:px-5 py-2 text-sm md:text-base font-semibold rounded-xl shadow-lg transition-all duration-200 active:scale-[0.98]"
-            :class="
-              scrolled
-                ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-blue-600/20'
-                : 'bg-white text-blue-700 hover:bg-blue-50 shadow-black/10'
-            "
-          >
-            Hasaba alyň
-          </RouterLink>
         </div>
       </div>
     </header>
