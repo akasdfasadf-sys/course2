@@ -78,8 +78,7 @@
             <span class="text-blue-100">Döretmäge Başlaň</span>
           </h1>
           <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-50/95 mb-6 md:mb-8 leading-relaxed px-2 max-w-3xl mx-auto">
-            22 sany hünär kurslary arkaly täze başarnyklary öwreniň.<br />
-            Hünärmenlerden onlaýn okuw we resmi sertifikat alyň.
+
           </p>
           <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4 sm:px-0">
             <RouterLink
@@ -130,7 +129,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div v-bm-reveal:right class="text-center mb-10 md:mb-16">
           <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3 md:mb-4 tracking-tight">Kurs kategoriýalary</h2>
-          <p class="text-base md:text-xl text-gray-600 max-w-2xl mx-auto">Dürli ugurlarda hünär kurslaryndan saýlaň</p>
+          
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           <div
@@ -144,21 +143,6 @@
             <p class="text-sm md:text-base text-gray-600">{{ cat.count }} kurs</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="py-14 md:py-20 relative overflow-hidden bg-gradient-to-br from-[#0056d2] to-indigo-900 text-white">
-      <div class="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_30%_20%,white,transparent_50%)]" />
-      <div v-bm-reveal:scale class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-4 md:mb-6 tracking-tight">Bilim syýahatyňyza häzir başlaň!</h2>
-        <p class="text-base md:text-xl text-blue-100 mb-6 md:mb-8">Mugt hasaba alnyň we 22 sany hünär kursyna giriň</p>
-        <RouterLink
-          to="/register"
-          class="inline-flex items-center gap-2 bg-white text-blue-700 px-6 py-3.5 md:px-8 md:py-4 rounded-xl font-bold text-base md:text-lg hover:bg-blue-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0"
-        >
-          Mugt hasaba alyň <ArrowRight class="w-5 h-5" />
-        </RouterLink>
       </div>
     </section>
 
