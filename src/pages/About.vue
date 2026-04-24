@@ -14,7 +14,7 @@
           <span class="text-blue-100">Bilim Merkezi</span>
         </h1>
         <p class="text-blue-100 text-base md:text-xl max-w-2xl mx-auto">
-          Biliň bilen — Täze pikir, Täze çözgüt, Täze durmuş!
+          Täze pikir, Täze çözgüt, Täze durmuş!
         </p>
       </div>
     </section>
@@ -60,10 +60,14 @@
           <p class="text-gray-600 max-w-xl mx-auto">Dürli ugurlarda hünär kurslarymyz bilen bilim alyň</p>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
-          <div v-for="ugur in ugurlar" :key="ugur"
-            class="bg-white border border-gray-100 rounded-2xl px-4 py-3 text-center text-sm font-semibold text-gray-700 shadow-sm hover:shadow-md hover:border-blue-200 hover:text-blue-700 transition-all duration-200 cursor-default">
-            {{ ugur }}
-          </div>
+          <RouterLink
+            v-for="ugur in ugurlar" :key="ugur.name"
+            :to="{ path: '/courses', query: { search: ugur.search } }"
+            class="bg-white border border-gray-100 rounded-2xl px-4 py-3 text-center text-sm font-semibold text-gray-700 shadow-sm hover:shadow-md hover:border-blue-200 hover:text-blue-700 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
+          >
+            <span>{{ ugur.icon }}</span>
+            <span>{{ ugur.name }}</span>
+          </RouterLink>
         </div>
       </div>
     </section>
@@ -103,12 +107,22 @@ import AppHeader from '../components/AppHeader.vue'
 import AppFooter from '../components/AppFooter.vue'
 
 const ugurlar = [
-  'Mugallymçylyk işi we pedagogik tehnologiýa',
-  'Iňlis dili', 'Ýapon dili', 'Rus dili', 'Koreý dili',
-  'Matematika', 'Fizika', 'Biologiýa', 'Himiýa',
-  'Kompýuter sowatlylygy', 'Sanly ykdysadyýet',
-  'Programirlemek', 'Kiberhowpsuzlyk', 'Robot tehnikasy',
-  'Kibersport', 'Kompýuterde inženerçilik grafikasy we animasiýasy',
+  { name: 'Mugallymçylyk işi we pedagogik tehnologiýa', search: 'Mugallymçylyk', icon: '👨‍🏫' },
+  { name: 'Iňlis dili', search: 'Iňlis dili', icon: '🇬🇧' },
+  { name: 'Ýapon dili', search: 'Ýapon dili', icon: '🇯🇵' },
+  { name: 'Rus dili', search: 'Rus dili', icon: '🇷🇺' },
+  { name: 'Koreý dili', search: 'Koreý dili', icon: '🇰🇷' },
+  { name: 'Matematika', search: 'Matematika', icon: '🔢' },
+  { name: 'Fizika', search: 'Fizika', icon: '⚛️' },
+  { name: 'Biologiýa', search: 'Biologiýa', icon: '🔬' },
+  { name: 'Himiýa', search: 'Himiýa', icon: '🧪' },
+  { name: 'Kompýuter sowatlylygy', search: 'Kompýuter sowatlylygy', icon: '🖥️' },
+  { name: 'Sanly ykdysadyýet', search: 'Sanly ykdysadyýet', icon: '💹' },
+  { name: 'Programirlemek', search: 'Programirlemek', icon: '💻' },
+  { name: 'Kiberhowpsuzlyk', search: 'Kiberhowpsuzlyk', icon: '🔐' },
+  { name: 'Robot tehnikasy', search: 'Robot tehnikasy', icon: '🤖' },
+  { name: 'Kibersport', search: 'Kibersport', icon: '🎮' },
+  { name: 'Kompýuterde inženerçilik grafikasy we animasiýasy', search: 'grafikasy', icon: '🎨' },
 ]
 
 const ayratynlyklar = [

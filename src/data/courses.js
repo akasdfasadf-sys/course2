@@ -1,39 +1,39 @@
 ﻿export const categories = [
-  { id: '1', name: 'Teaching & Pedagogy', nameTm: 'Mugallymçylyk we pedagogika', icon: 'GraduationCap' },
+  { id: '1', name: 'Teaching & Pedagogy', nameTm: 'Mugallymylyk we pedagogika', icon: 'GraduationCap' },
   { id: '2', name: 'Programming', nameTm: 'Programirlemek', icon: 'Code' },
   { id: '3', name: 'Cybersecurity', nameTm: 'Kiberhowpsuzlyk', icon: 'Shield' },
-  { id: '4', name: 'Computer Graphics', nameTm: 'Kompýuter grafikasy', icon: 'Monitor' },
+  { id: '4', name: 'Computer Graphics', nameTm: 'Komputer grafikasy', icon: 'Monitor' },
   { id: '5', name: 'Mathematics', nameTm: 'Matematika', icon: 'Calculator' },
   { id: '6', name: 'Sciences', nameTm: 'Ylymlar', icon: 'Atom' },
   { id: '7', name: 'Languages', nameTm: 'Diller', icon: 'Languages' },
-  { id: '8', name: 'Computer Skills', nameTm: 'Kompýuter endikleri', icon: 'Monitor' },
+  { id: '8', name: 'Computer Skills', nameTm: 'Komputer sowatlylygy', icon: 'Monitor' },
   { id: '9', name: 'Robotics', nameTm: 'Robot tehnikasy', icon: 'Cpu' },
 ]
 
 export const courses = [
-  // 1. Mugallymçylyk
+  // 1. Mugallymylyk
   {
     id: '1', title: 'Teaching Work and Pedagogical Technology',
-    titleTm: 'Mugallymçylyk işi we pedagogik tehnologiýa',
+    titleTm: 'Mugallymylyk isi we pedagogik tehnologia',
     description: 'Comprehensive course on modern teaching methods.',
-    descriptionTm: 'Häzirki zaman mugallymçylyk usullary we pedagogik tehnologiýalar boýunça giňişleýin kurs.',
-    instructor: 'Aziza Nurlyýewa',
+    descriptionTm: 'Hzirki zaman mugallymylyk usullary we pedagogik tehnologialar bouna ginislein kurs.',
+    instructor: 'Aziza Nurlyewa',
     instructorAvatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&fit=crop',
-    category: 'Teaching & Pedagogy', categoryTm: 'Mugallymçylyk we pedagogika',
+    category: 'Teaching & Pedagogy', categoryTm: 'Mugallymylyk we pedagogika',
     level: 'Intermediate', rating: 4.9, studentsEnrolled: 450,
     basePrice: 2500, price15: null, price30: null, weeks: 18,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 2. Kompýuter sowatlylygy
+  // 2. Komputer sowatlylygy
   {
-    id: '2', title: 'Computer Literacy', titleTm: 'Kompýuter sowatlylygy',
+    id: '2', title: 'Computer Literacy', titleTm: 'Komputer sowatlylygy',
     description: 'Learn essential computer skills.',
-    descriptionTm: 'Windows, Office programmalary we internet esaslary ýaly möhüm kompýuter endiklerini öwreniň.',
-    instructor: 'Merdan Annaýew',
+    descriptionTm: 'Windows, Office programmalary we internet esaslary aly mhm Komputer sowatlylygyni wrenin.',
+    instructor: 'Merdan Annaew',
     instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&fit=crop',
-    category: 'Computer Skills', categoryTm: 'Kompýuter endikleri',
+    category: 'Computer Skills', categoryTm: 'Komputer sowatlylygy',
     level: 'Beginner', rating: 4.7, studentsEnrolled: 680,
     basePrice: 783, price15: 665, price30: 549, weeks: 9,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
@@ -42,8 +42,8 @@ export const courses = [
   {
     id: '3', title: 'Mathematics (Levels I-IV)', titleTm: 'Matematika (I-II-III-IV) dereje',
     description: 'Complete mathematics course covering all levels.',
-    descriptionTm: 'Algebra, geometriýa we kalkulus ýaly esaslardan ösen mowzuklara çenli doly matematika kursy.',
-    instructor: 'Gülnar Baýramowa',
+    descriptionTm: 'Algebra, geometria we kalkulus aly esaslardan sen mowzuklara enli doly matematika kursy.',
+    instructor: 'Glnar Baramowa',
     instructorAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&fit=crop',
     category: 'Mathematics', categoryTm: 'Matematika',
@@ -51,12 +51,12 @@ export const courses = [
     basePrice: 1050, price15: 893, price30: 735, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 4. Matematika tizleşdirilen
+  // 4. Matematika tizlesdirilen
   {
-    id: '4', title: 'Mathematics Accelerated', titleTm: 'Matematika tizleşdirilen',
+    id: '4', title: 'Mathematics Accelerated', titleTm: 'Matematika tizlesdirilen',
     description: 'Accelerated mathematics course.',
-    descriptionTm: 'Tizleşdirilen görnüşde matematikany çuňňur öwrenmek üçin intensiw kurs.',
-    instructor: 'Gülnar Baýramowa',
+    descriptionTm: 'Tizlesdirilen grnsde matematikany unnur wrenmek in intensiw kurs.',
+    instructor: 'Glnar Baramowa',
     instructorAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&fit=crop',
     category: 'Mathematics', categoryTm: 'Matematika',
@@ -68,8 +68,8 @@ export const courses = [
   {
     id: '5', title: 'Physics (Levels I-IV)', titleTm: 'Fizika (I-II-III-IV) dereje',
     description: 'Comprehensive physics course.',
-    descriptionTm: 'Mehanika, termodinamika, elektromagnetizm we häzirki zaman fizikasyny öz içine alýan giňişleýin fizika kursy.',
-    instructor: 'Döwran Gurbanow',
+    descriptionTm: 'Mehanika, termodinamika, elektromagnetizm we hzirki zaman fizikasyny z iine alan ginislein fizika kursy.',
+    instructor: 'Dwran Gurbanow',
     instructorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=800&fit=crop',
     category: 'Sciences', categoryTm: 'Ylymlar',
@@ -77,12 +77,12 @@ export const courses = [
     basePrice: 1050, price15: 893, price30: 735, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 6. Fizika tizleşdirilen
+  // 6. Fizika tizlesdirilen
   {
-    id: '6', title: 'Physics Accelerated', titleTm: 'Fizika tizleşdirilen',
+    id: '6', title: 'Physics Accelerated', titleTm: 'Fizika tizlesdirilen',
     description: 'Accelerated physics course.',
-    descriptionTm: 'Tizleşdirilen görnüşde fizikany çuňňur öwrenmek üçin intensiw kurs.',
-    instructor: 'Döwran Gurbanow',
+    descriptionTm: 'Tizlesdirilen grnsde fizikany unnur wrenmek in intensiw kurs.',
+    instructor: 'Dwran Gurbanow',
     instructorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&fit=crop',
     category: 'Sciences', categoryTm: 'Ylymlar',
@@ -90,12 +90,12 @@ export const courses = [
     basePrice: 2050, price15: 893, price30: 735, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 7. Biologiýa
+  // 7. Biologia
   {
-    id: '7', title: 'Biology (Levels I-IV)', titleTm: 'Biologiýa (I-II-III-IV) dereje',
+    id: '7', title: 'Biology (Levels I-IV)', titleTm: 'Biologia (I-II-III-IV) dereje',
     description: 'Study of living organisms.',
-    descriptionTm: 'Öýjük biologiýasyndan ekologiýa we adam anatomiýasyna çenli janly organizmleri öwrenmek.',
-    instructor: 'Maýsa Kerimowa',
+    descriptionTm: 'jk biologiasyndan ekologia we adam anatomiasyna enli janly organizmleri wrenmek.',
+    instructor: 'Masa Kerimowa',
     instructorAvatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&fit=crop',
     category: 'Sciences', categoryTm: 'Ylymlar',
@@ -103,12 +103,12 @@ export const courses = [
     basePrice: 1050, price15: 893, price30: 735, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 8. Biologiýa tizleşdirilen
+  // 8. Biologia tizlesdirilen
   {
-    id: '8', title: 'Biology Accelerated', titleTm: 'Biologiýa tizleşdirilen',
+    id: '8', title: 'Biology Accelerated', titleTm: 'Biologia tizlesdirilen',
     description: 'Accelerated biology course.',
-    descriptionTm: 'Tizleşdirilen görnüşde biologiýany çuňňur öwrenmek üçin intensiw kurs.',
-    instructor: 'Maýsa Kerimowa',
+    descriptionTm: 'Tizlesdirilen grnsde biologiany unnur wrenmek in intensiw kurs.',
+    instructor: 'Masa Kerimowa',
     instructorAvatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&fit=crop',
     category: 'Sciences', categoryTm: 'Ylymlar',
@@ -116,11 +116,11 @@ export const courses = [
     basePrice: 1050, price15: 893, price30: 735, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 9. Himiýa
+  // 9. Himia
   {
-    id: '9', title: 'Chemistry (Levels I-IV)', titleTm: 'Himiýa (I-II-III-IV) dereje',
+    id: '9', title: 'Chemistry (Levels I-IV)', titleTm: 'Himia (I-II-III-IV) dereje',
     description: 'Complete chemistry course.',
-    descriptionTm: 'Organiki, inorganiki we fiziki himiýany öz içine alýan doly himiýa kursy.',
+    descriptionTm: 'Organiki, inorganiki we fiziki himiany z iine alan doly himia kursy.',
     instructor: 'Batyr Orazow',
     instructorAvatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&fit=crop',
@@ -129,11 +129,11 @@ export const courses = [
     basePrice: 1050, price15: 893, price30: 735, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 10. Himiýa tizleşdirilen
+  // 10. Himia tizlesdirilen
   {
-    id: '10', title: 'Chemistry Accelerated', titleTm: 'Himiýa tizleşdirilen',
+    id: '10', title: 'Chemistry Accelerated', titleTm: 'Himia tizlesdirilen',
     description: 'Accelerated chemistry course.',
-    descriptionTm: 'Tizleşdirilen görnüşde himiýany çuňňur öwrenmek üçin intensiw kurs.',
+    descriptionTm: 'Tizlesdirilen grnsde himiany unnur wrenmek in intensiw kurs.',
     instructor: 'Batyr Orazow',
     instructorAvatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?w=800&fit=crop',
@@ -142,24 +142,24 @@ export const courses = [
     basePrice: 1050, price15: 893, price30: 735, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 11. Sanly ykdysadyýet
+  // 11. Sanly ykdysadyet
   {
-    id: '11', title: 'Digital Economy', titleTm: 'Sanly ykdysadyýet',
+    id: '11', title: 'Digital Economy', titleTm: 'Sanly ykdysadyet',
     description: 'Learn about digital transformation.',
-    descriptionTm: 'Sanly özgerişme, elektron söwda, fintech we häzirki zaman sanly ykdysadyýet barada öwreniň.',
-    instructor: 'Aýna Halmyradowa',
+    descriptionTm: 'Sanly zgerisme, elektron swda, fintech we hzirki zaman sanly ykdysadyet barada wrenin.',
+    instructor: 'Ana Halmyradowa',
     instructorAvatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&fit=crop',
-    category: 'Computer Skills', categoryTm: 'Kompýuter endikleri',
+    category: 'Computer Skills', categoryTm: 'Komputer sowatlylygy',
     level: 'Intermediate', rating: 4.7, studentsEnrolled: 290,
     basePrice: 1050, price15: 893, price30: 735, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 12. Iňlis dili Beginner
+  // 12. Inlis dili Beginner
   {
-    id: '12', title: 'English Language (Beginner & Elementary)', titleTm: 'Iňlis dili (beginner we elementary)',
+    id: '12', title: 'English Language (Beginner & Elementary)', titleTm: 'Inlis dili (beginner we elementary)',
     description: 'Start your English learning journey.',
-    descriptionTm: 'Esaslardan başlangyç derejeli aragatnaşyk endiklerine çenli iňlis dili öwreniň.',
+    descriptionTm: 'Esaslardan baslangy derejeli aragatnasyk endiklerine enli inlis dili wrenin.',
     instructor: 'Emma Williams',
     instructorAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800&fit=crop',
@@ -168,11 +168,11 @@ export const courses = [
     basePrice: 1050, price15: 893, price30: 735, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 13. Iňlis dili Intermediate
+  // 13. Inlis dili Intermediate
   {
-    id: '13', title: 'English Language (Pre-Intermediate & Intermediate)', titleTm: 'Iňlis dili (pre-intermediate we intermediate)',
+    id: '13', title: 'English Language (Pre-Intermediate & Intermediate)', titleTm: 'Inlis dili (pre-intermediate we intermediate)',
     description: 'Advance your English skills.',
-    descriptionTm: 'Söhbetdeşlik we ýazmaga ünsi jemläp, iňlis dili endikleriňizi orta derejä çenli ösdüriň.',
+    descriptionTm: 'Shbetdeslik we azmaga nsi jemlp, inlis dili endiklerinizi orta derej enli sdrin.',
     instructor: 'James Anderson',
     instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&fit=crop',
@@ -181,11 +181,11 @@ export const courses = [
     basePrice: 1163, price15: 988, price30: 814, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 14. Çagalar üçin iňlis dili
+  // 14. agalar in inlis dili
   {
-    id: '14', title: "Children's English (Let's Begin I-II, Let's Go I-II-III-IV-V)", titleTm: "Çagalar üçin iňlis dili (Let's begin I-II, Let's Go I-II-III-IV-V)",
+    id: '14', title: "Children's English (Let's Begin I-II, Let's Go I-II-III-IV-V)", titleTm: "agalar in inlis dili (Let's begin I-II, Let's Go I-II-III-IV-V)",
     description: "English for children using Let's Begin and Let's Go series.",
-    descriptionTm: "Çagalar üçin iňlis dili öwrenmek - Let's Begin we Let's Go seriýalary arkaly.",
+    descriptionTm: "agalar in inlis dili wrenmek - Let's Begin we Let's Go serialary arkaly.",
     instructor: 'Emma Williams',
     instructorAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&fit=crop',
@@ -194,11 +194,11 @@ export const courses = [
     basePrice: 1000, price15: 850, price30: 700, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 15. Ýapon dili I
+  // 15. apon dili I
   {
-    id: '15', title: 'Japanese Language Level I', titleTm: 'Ýapon dili I dereje',
+    id: '15', title: 'Japanese Language Level I', titleTm: 'apon dili I dereje',
     description: 'Begin learning Japanese.',
-    descriptionTm: 'Hiragana, Katakana we esasy grammatika ýaly ýapon dili we medeniýetini noldan öwrenmäge başlaň.',
+    descriptionTm: 'Hiragana, Katakana we esasy grammatika aly apon dili we medenietini noldan wrenmge baslan.',
     instructor: 'Yuki Tanaka',
     instructorAvatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&fit=crop',
@@ -207,11 +207,11 @@ export const courses = [
     basePrice: 1600, price15: 1360, price30: 1120, weeks: 20,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 16. Ýapon dili II
+  // 16. apon dili II
   {
-    id: '16', title: 'Japanese Language Level II', titleTm: 'Ýapon dili II dereje',
+    id: '16', title: 'Japanese Language Level II', titleTm: 'apon dili II dereje',
     description: 'Continue your Japanese studies.',
-    descriptionTm: 'Orta derejeli grammatika, Kanži we söhbetdeşlik tejribesi bilen ýapon dili okuwlaryny dowam ediň.',
+    descriptionTm: 'Orta derejeli grammatika, Kani we shbetdeslik tejribesi bilen apon dili okuwlaryny dowam edin.',
     instructor: 'Haruto Suzuki',
     instructorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1480796927426-f609979314bd?w=800&fit=crop',
@@ -220,11 +220,11 @@ export const courses = [
     basePrice: 1505, price15: 1230, price30: 1053, weeks: 19,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 17. Ýapon dili III
+  // 17. apon dili III
   {
-    id: '17', title: 'Japanese Language Level III', titleTm: 'Ýapon dili III dereje',
+    id: '17', title: 'Japanese Language Level III', titleTm: 'apon dili III dereje',
     description: 'Advanced Japanese language course.',
-    descriptionTm: 'Ösen grammatika, Kanži we iş dili bilen ýapon dilini ösen derejede öwreniň.',
+    descriptionTm: 'sen grammatika, Kani we is dili bilen apon dilini sen derejede wrenin.',
     instructor: 'Haruto Suzuki',
     instructorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&fit=crop',
@@ -233,11 +233,11 @@ export const courses = [
     basePrice: 1200, price15: 1108, price30: 913, weeks: 13,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 17b. Çagalar üçin ýapon dili I
+  // 17b. agalar in apon dili I
   {
-    id: '17b', title: "Children's Japanese Level I", titleTm: 'Çagalar üçin ýapon dili I dereje',
+    id: '17b', title: "Children's Japanese Level I", titleTm: 'agalar in apon dili I dereje',
     description: 'Japanese for children - Level I.',
-    descriptionTm: 'Çagalar üçin ýapon dilini gyzykly we aňsat usulda öwrenmek.',
+    descriptionTm: 'agalar in apon dilini gyzykly we ansat usulda wrenmek.',
     instructor: 'Yuki Tanaka',
     instructorAvatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&fit=crop',
@@ -246,11 +246,11 @@ export const courses = [
     basePrice: 1095, price15: 930, price30: 766, weeks: 16,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 18. Çagalar üçin ýapon dili II
+  // 18. agalar in apon dili II
   {
-    id: '18', title: "Children's Japanese Level II", titleTm: 'Çagalar üçin ýapon dili II dereje',
+    id: '18', title: "Children's Japanese Level II", titleTm: 'agalar in apon dili II dereje',
     description: 'Japanese for children - Level II.',
-    descriptionTm: 'Çagalar üçin ýapon dilini II derejede öwrenmek.',
+    descriptionTm: 'agalar in apon dilini II derejede wrenmek.',
     instructor: 'Yuki Tanaka',
     instructorAvatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1480796927426-f609979314bd?w=800&fit=crop',
@@ -263,8 +263,8 @@ export const courses = [
   {
     id: '19', title: 'Russian Language (Levels I-II-III)', titleTm: 'Rus dili (I-II-III)',
     description: 'Learn Russian language from beginner to advanced.',
-    descriptionTm: 'Rus dilini başlangyçdan ösen derejä çenli öwreniň.',
-    instructor: 'Nataşa Iwanowa',
+    descriptionTm: 'Rus dilini baslangydan sen derej enli wrenin.',
+    instructor: 'Natasa Iwanowa',
     instructorAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1513326738677-b964603b136d?w=800&fit=crop',
     category: 'Languages', categoryTm: 'Diller',
@@ -272,11 +272,11 @@ export const courses = [
     basePrice: 1050, price15: 892, price30: 735, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 20. Koreý dili 1A
+  // 20. Kore dili 1A
   {
-    id: '20', title: 'Korean Language 1A', titleTm: 'Koreý dili 1A',
+    id: '20', title: 'Korean Language 1A', titleTm: 'Kore dili 1A',
     description: 'Learn Korean alphabet and basics.',
-    descriptionTm: 'Başlangyç üçin koreý elipbiýini (Hangul), esasy grammatikany we möhüm sözlemleri öwreniň.',
+    descriptionTm: 'Baslangy in kore elipbiini (Hangul), esasy grammatikany we mhm szlemleri wrenin.',
     instructor: 'Min-jun Kim',
     instructorAvatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=800&fit=crop',
@@ -285,11 +285,11 @@ export const courses = [
     basePrice: 1000, price15: 950, price30: 700, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 21. Koreý dili
+  // 21. Kore dili
   {
-    id: '21', title: 'Korean Language', titleTm: 'Koreý dili',
+    id: '21', title: 'Korean Language', titleTm: 'Kore dili',
     description: 'Intermediate Korean language course.',
-    descriptionTm: 'Orta derejeli koreý dili - grammatika, söhbetdeşlik we ýazuw.',
+    descriptionTm: 'Orta derejeli kore dili - grammatika, shbetdeslik we azuw.',
     instructor: 'Min-jun Kim',
     instructorAvatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=800&fit=crop',
@@ -302,21 +302,21 @@ export const courses = [
   {
     id: '22', title: 'Cybersport', titleTm: 'Kibersport',
     description: 'Professional esports training and strategy.',
-    descriptionTm: 'Professional kibersport türgenleşigi, strategiýa we topar oýny.',
-    instructor: 'Arslan Durdyýew',
+    descriptionTm: 'Professional kibersport trgenlesigi, strategia we topar ony.',
+    instructor: 'Arslan Durdyew',
     instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&fit=crop',
-    category: 'Computer Skills', categoryTm: 'Kompýuter endikleri',
+    category: 'Computer Skills', categoryTm: 'Komputer sowatlylygy',
     level: 'Intermediate', rating: 4.6, studentsEnrolled: 520,
     basePrice: 1150, price15: 978, price30: 805, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
   // 2.1 Programirlemek - C++
   {
-    id: '23', title: 'Programming Fundamentals - C++', titleTm: 'Programirlemegiň başlangyçlary - C++',
+    id: '23', title: 'Programming Fundamentals - C++', titleTm: 'Programirlemegin baslangylary - C++',
     description: 'Master C++ programming from basics to OOP.',
-    descriptionTm: 'C++ programirlemesini esaslardan OOP we maglumat gurluşlary ýaly ösen düşünjelere çenli öwreniň.',
-    instructor: 'Kerim Baýramow',
+    descriptionTm: 'C++ programirlemesini esaslardan OOP we maglumat gurluslary aly sen dsnjelere enli wrenin.',
+    instructor: 'Kerim Baramow',
     instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&fit=crop',
     category: 'Programming', categoryTm: 'Programirlemek',
@@ -326,9 +326,9 @@ export const courses = [
   },
   // 2.2 Python
   {
-    id: '24', title: 'Programming Fundamentals - Python', titleTm: 'Programirlemegiň başlangyçlary - Python',
+    id: '24', title: 'Programming Fundamentals - Python', titleTm: 'Programirlemegin baslangylary - Python',
     description: 'Learn Python programming with practical projects.',
-    descriptionTm: 'Başlangyç üçin amaly taslamalar we maşklar bilen Python programirlemesini öwreniň.',
+    descriptionTm: 'Baslangy in amaly taslamalar we masklar bilen Python programirlemesini wrenin.',
     instructor: 'Selbi Gurbanowa',
     instructorAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=800&fit=crop',
@@ -339,10 +339,10 @@ export const courses = [
   },
   // 2.3 Data Structures
   {
-    id: '25', title: 'Data Structures and Algorithms', titleTm: 'Maglumatlar gurluşlary we algoritmler',
+    id: '25', title: 'Data Structures and Algorithms', titleTm: 'Maglumatlar gurluslary we algoritmler',
     description: 'Master essential data structures and algorithms.',
-    descriptionTm: 'Netijeli programirlemek we meseläni çözmek üçin möhüm maglumat gurluşlaryny we algoritmleri öwreniň.',
-    instructor: 'Myrat Annaýew',
+    descriptionTm: 'Netijeli programirlemek we meselni zmek in mhm maglumat gurluslaryny we algoritmleri wrenin.',
+    instructor: 'Myrat Annaew',
     instructorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&fit=crop',
     category: 'Programming', categoryTm: 'Programirlemek',
@@ -352,10 +352,10 @@ export const courses = [
   },
   // 2.4 Frontend
   {
-    id: '26', title: 'Web Programming - Front-end', titleTm: 'Web programirlemegiň esaslary - Front-end',
+    id: '26', title: 'Web Programming - Front-end', titleTm: 'Web programirlemegin esaslary - Front-end',
     description: 'Learn HTML, CSS, JavaScript and modern frameworks.',
-    descriptionTm: 'Gözel web sahypalaryny döretmek üçin HTML, CSS, JavaScript we häzirki zaman front-end çarçuwalaryny öwreniň.',
-    instructor: 'Jennet Täçmyradowa',
+    descriptionTm: 'Gzel web sahypalaryny dretmek in HTML, CSS, JavaScript we hzirki zaman front-end aruwalaryny wrenin.',
+    instructor: 'Jennet Tmyradowa',
     instructorAvatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&fit=crop',
     category: 'Programming', categoryTm: 'Programirlemek',
@@ -365,10 +365,10 @@ export const courses = [
   },
   // 2.5 Backend
   {
-    id: '27', title: 'Web Programming - Back-end', titleTm: 'Web programirlemegiň esaslary - Back-end',
+    id: '27', title: 'Web Programming - Back-end', titleTm: 'Web programirlemegin esaslary - Back-end',
     description: 'Build server-side applications with Node.js.',
-    descriptionTm: 'Node.js, maglumat bazalary we API ösüşi bilen güýçli serwer tarapdaky programmalaryny dörediň.',
-    instructor: 'Döwlet Hojagulyyew',
+    descriptionTm: 'Node.js, maglumat bazalary we API ssi bilen gli serwer tarapdaky programmalaryny dredin.',
+    instructor: 'Dwlet Hojagulyyew',
     instructorAvatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&fit=crop',
     category: 'Programming', categoryTm: 'Programirlemek',
@@ -378,9 +378,9 @@ export const courses = [
   },
   // 2.6 Flutter I
   {
-    id: '28', title: 'Mobile Programming I - Flutter', titleTm: 'Mobil gurluşlary programirlemek I - Flutter',
+    id: '28', title: 'Mobile Programming I - Flutter', titleTm: 'Mobil gurluslary programirlemek I - Flutter',
     description: 'Create cross-platform mobile apps with Flutter.',
-    descriptionTm: 'Flutter we Dart ulanyp, iOS we Android üçin platform-aralyk ykjam programmalary dörediň.',
+    descriptionTm: 'Flutter we Dart ulanyp, iOS we Android in platform-aralyk ykjam programmalary dredin.',
     instructor: 'Bahar Gurbanova',
     instructorAvatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&fit=crop',
@@ -391,9 +391,9 @@ export const courses = [
   },
   // 2.7 Flutter II
   {
-    id: '29', title: 'Mobile Programming II - Flutter', titleTm: 'Mobil gurluşlary programirlemek II - Flutter',
+    id: '29', title: 'Mobile Programming II - Flutter', titleTm: 'Mobil gurluslary programirlemek II - Flutter',
     description: 'Advanced Flutter development.',
-    descriptionTm: 'Döwlet dolandyryşy, animasiýalar we önümçilik ýerleşdirmegi öz içine alýan öňdebaryjy Flutter ösüşi.',
+    descriptionTm: 'Dwlet dolandyrysy, animasialar we nmilik erlesdirmegi z iine alan ndebaryjy Flutter ssi.',
     instructor: 'Nurberdi Saparow',
     instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=800&fit=crop',
@@ -402,12 +402,12 @@ export const courses = [
     basePrice: 2408, price15: 2047, price30: 1686, weeks: 16,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 3.1 Kiberhowpsuzlyk - Maglumatlary alyşmak
+  // 3.1 Kiberhowpsuzlyk - Maglumatlary alysmak
   {
-    id: '30', title: 'Cybersecurity - Networks and Systems', titleTm: 'Maglumatlary alyşmak üçin ulgamlar we torlar',
+    id: '30', title: 'Cybersecurity - Networks and Systems', titleTm: 'Maglumatlary alysmak in ulgamlar we torlar',
     description: 'Network security and data exchange systems.',
-    descriptionTm: 'Tor howpsuzlygy, kriptografiýa we maglumat alyşmak ulgamlary boýunça giňişleýin kurs.',
-    instructor: 'Aýbolek Geldimyradowa',
+    descriptionTm: 'Tor howpsuzlygy, kriptografia we maglumat alysmak ulgamlary bouna ginislein kurs.',
+    instructor: 'Abolek Geldimyradowa',
     instructorAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&fit=crop',
     category: 'Cybersecurity', categoryTm: 'Kiberhowpsuzlyk',
@@ -419,7 +419,7 @@ export const courses = [
   {
     id: '31', title: 'Cybersecurity - Linux Operating System', titleTm: 'Kiberhowpsuzlyk - Linux operasion ulgamy',
     description: 'Master Linux for cybersecurity.',
-    descriptionTm: 'Buýruk setiri, ulgam dolandyryşy we howpsuzlyk gurallary ýaly kiberhowpsuzlyk üçin Linux-y öwreniň.',
+    descriptionTm: 'Buruk setiri, ulgam dolandyrysy we howpsuzlyk gurallary aly kiberhowpsuzlyk in Linux-y wrenin.',
     instructor: 'Berdi Myradow',
     instructorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&fit=crop',
@@ -428,12 +428,12 @@ export const courses = [
     basePrice: 2406, price15: 2045, price30: 1685, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 3.3 Kiberhowpsuzlygyň esaslary
+  // 3.3 Kiberhowpsuzlygyn esaslary
   {
-    id: '32', title: 'Cybersecurity Fundamentals', titleTm: 'Kiberhowpsuzlygyň esaslary',
+    id: '32', title: 'Cybersecurity Fundamentals', titleTm: 'Kiberhowpsuzlygyn esaslary',
     description: 'Learn cybersecurity fundamentals.',
-    descriptionTm: 'Tor howpsuzlygy, kriptografiýa we etiki hacking ýaly kiberhowpsuzlygyň esaslaryny öwreniň.',
-    instructor: 'Aýbolek Geldimyradowa',
+    descriptionTm: 'Tor howpsuzlygy, kriptografia we etiki hacking aly kiberhowpsuzlygyn esaslaryny wrenin.',
+    instructor: 'Abolek Geldimyradowa',
     instructorAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&fit=crop',
     category: 'Cybersecurity', categoryTm: 'Kiberhowpsuzlyk',
@@ -443,39 +443,39 @@ export const courses = [
   },
   // 4.1 2D/3D Modelirlemek
   {
-    id: '33', title: '2D/3D Modeling and Design (I-II)', titleTm: '2D/3D modelirlemek we dizaýn (I-II)',
+    id: '33', title: '2D/3D Modeling and Design (I-II)', titleTm: '2D/3D modelirlemek we dizan (I-II)',
     description: 'Master 2D/3D modeling and design.',
-    descriptionTm: 'Oýunlar, animasiýa we wizualizasiýa üçin 2D/3D modellemäni, teksturlary we render öwreniň.',
-    instructor: 'Şamyrat Öwezow',
+    descriptionTm: 'Ounlar, animasia we wizualizasia in 2D/3D modellemni, teksturlary we render wrenin.',
+    instructor: 'Samyrat wezow',
     instructorAvatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1617042375876-a13e36732a04?w=800&fit=crop',
-    category: 'Computer Graphics', categoryTm: 'Kompýuter grafikasy',
+    category: 'Computer Graphics', categoryTm: 'Komputer grafikasy',
     level: 'Intermediate', rating: 4.8, studentsEnrolled: 460,
     basePrice: 2406, price15: 2045, price30: 1685, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 4.2 Inženerçilik grafikasy
+  // 4.2 Inenerilik grafikasy
   {
-    id: '34', title: 'Engineering and Computer Graphics', titleTm: 'Inženerçilik we kompýuter grafikasy',
+    id: '34', title: 'Engineering and Computer Graphics', titleTm: 'Inenerilik we komputer grafikasy',
     description: 'Engineering graphics and CAD design.',
-    descriptionTm: 'Inženerçilik çyzgylary, CAD programmalary we kompýuter grafikasy boýunça kurs.',
-    instructor: 'Şamyrat Öwezow',
+    descriptionTm: 'Inenerilik yzgylary, CAD programmalary we komputer grafikasy bouna kurs.',
+    instructor: 'Samyrat wezow',
     instructorAvatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&fit=crop',
-    category: 'Computer Graphics', categoryTm: 'Kompýuter grafikasy',
+    category: 'Computer Graphics', categoryTm: 'Komputer grafikasy',
     level: 'Intermediate', rating: 4.7, studentsEnrolled: 320,
     basePrice: 2406, price15: 2045, price30: 1685, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
-  // 4.3 Kompýuter animasiýasy
+  // 4.3 Komputer animasiasy
   {
-    id: '35', title: 'Computer Animation', titleTm: 'Kompýuter animasiýasy',
+    id: '35', title: 'Computer Animation', titleTm: 'Komputer animasiasy',
     description: 'Create professional computer animations.',
-    descriptionTm: 'Professional kompýuter animasiýalaryny döretmek - 2D we 3D animasiýa.',
-    instructor: 'Şamyrat Öwezow',
+    descriptionTm: 'Professional komputer animasialaryny dretmek - 2D we 3D animasia.',
+    instructor: 'Samyrat wezow',
     instructorAvatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&fit=crop',
-    category: 'Computer Graphics', categoryTm: 'Kompýuter grafikasy',
+    category: 'Computer Graphics', categoryTm: 'Komputer grafikasy',
     level: 'Intermediate', rating: 4.8, studentsEnrolled: 280,
     basePrice: 2406, price15: 2045, price30: 1685, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
@@ -484,21 +484,21 @@ export const courses = [
   {
     id: '36', title: '4D Cinema - Modeling and Animation', titleTm: '4D sinema-da modilirlemek we hereketlendirmek',
     description: '4D Cinema modeling and animation course.',
-    descriptionTm: '4D sinema programmasynda modilirlemek we hereketlendirmek boýunça giňişleýin kurs.',
-    instructor: 'Şamyrat Öwezow',
+    descriptionTm: '4D sinema programmasynda modilirlemek we hereketlendirmek bouna ginislein kurs.',
+    instructor: 'Samyrat wezow',
     instructorAvatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1536240478700-b869ad10e128?w=800&fit=crop',
-    category: 'Computer Graphics', categoryTm: 'Kompýuter grafikasy',
+    category: 'Computer Graphics', categoryTm: 'Komputer grafikasy',
     level: 'Advanced', rating: 4.8, studentsEnrolled: 210,
     basePrice: 2406, price15: 2045, price30: 1685, weeks: 12,
     enrolled: false, progress: 0, certificateEarned: false, hasCertificate: true, lessons: [],
   },
   // 5.1 Robot tehnikasy
   {
-    id: '37', title: 'Robotics - Signals and Microschemes', titleTm: 'Signallary we mikroshemalary derňemek',
+    id: '37', title: 'Robotics - Signals and Microschemes', titleTm: 'Signallary we mikroshemalary dernemek',
     description: 'Robotics fundamentals - signals and microschemes.',
-    descriptionTm: 'Robot tehnikasynyň esaslary - signallar, mikroschemalar we programmirleme.',
-    instructor: 'Döwran Gurbanow',
+    descriptionTm: 'Robot tehnikasynyn esaslary - signallar, mikroschemalar we programmirleme.',
+    instructor: 'Dwran Gurbanow',
     instructorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&fit=crop',
     category: 'Robotics', categoryTm: 'Robot tehnikasy',

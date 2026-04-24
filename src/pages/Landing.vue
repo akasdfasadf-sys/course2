@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="min-h-screen bg-white">
     <!-- Top bar — Coursera / edX style -->
     <header
@@ -188,7 +188,7 @@ const catList = [
   { name: 'Ylymlar', count: 3, icon: '🔬' },
   { name: 'Matematika', count: 1, icon: '🔢' },
   { name: 'Mugallymçylyk', count: 1, icon: '👨‍🏫' },
-  { name: 'Kompýuter endikleri', count: 1, icon: '🖥️' },
+  { name: 'Komputer endikleri', count: 1, icon: '🖥️' },
 ]
 
 const footerLinks = [

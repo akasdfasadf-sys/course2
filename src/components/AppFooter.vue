@@ -46,19 +46,19 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
         <div>
-          <p class="text-sm text-gray-500 leading-relaxed mb-3">Bilim platformasy – Öwreniň we ösdüriň</p>
-          <p class="text-xs text-gray-600 leading-relaxed">Türkmenistanyň iň öňdebaryjy onlaýn okuw platformasy. Hünärmenlerden öwreniň, sertifikat alyň.</p>
+          <p class="text-sm text-gray-500 leading-relaxed mb-3">{{ t('footer.desc') }}</p>
+          <p class="text-xs text-gray-600 leading-relaxed">{{ t('footer.desc2') }}</p>
         </div>
         <div>
-          <h3 class="text-white font-bold text-xs uppercase tracking-widest mb-5">Baglanyşyklar</h3>
+          <h3 class="text-white font-bold text-xs uppercase tracking-widest mb-5">{{ t('footer.links') }}</h3>
           <ul class="space-y-3">
-            <li v-for="link in footerLinks" :key="link.to">
-              <RouterLink :to="link.to" class="text-sm text-gray-400 hover:text-white transition-colors duration-200">{{ link.label }}</RouterLink>
+            <li v-for="link in footerLinks" :key="link.key">
+              <RouterLink :to="link.to" class="text-sm text-gray-400 hover:text-white transition-colors duration-200">{{ t(link.key) }}</RouterLink>
             </li>
           </ul>
         </div>
         <div>
-          <h3 class="text-white font-bold text-xs uppercase tracking-widest mb-5">Habarlaşmak</h3>
+          <h3 class="text-white font-bold text-xs uppercase tracking-widest mb-5">{{ t('footer.contact') }}</h3>
           <ul class="space-y-3">
             <li>
               <a href="tel:+99364716128" class="flex items-center gap-2.5 hover:text-white transition-colors">
@@ -76,7 +76,7 @@
             </li>
             <li class="flex items-center gap-2.5">
               <MapPin class="w-4 h-4 text-gray-500 flex-shrink-0" />
-              <span class="text-sm">Aşgabat, Türkmenistan</span>
+              <span class="text-sm">{{ t('footer.address') }}</span>
             </li>
           </ul>
         </div>
@@ -86,20 +86,23 @@
     <!-- Bottom -->
     <div class="border-t border-gray-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-center">
-        <p class="text-xs text-gray-600">© 2026 Bilim Merkezi. Ähli hukuklar goragly.</p>
+        <p class="text-xs text-gray-600">{{ t('footer.rights') }}</p>
       </div>
     </div>
   </footer>
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n'
 import { BookOpen, Phone, MapPin } from 'lucide-vue-next'
 
+const { t } = useI18n()
+
 const footerLinks = [
-  { to: '/', label: 'Baş Sahypa' },
-  { to: '/about', label: 'Biz barada' },
-  { to: '/courses', label: 'Kurslar' },
-  { to: '/login', label: 'Giriş' },
-  { to: '/register', label: 'Hasaba alyň' },
+  { to: '/', key: 'nav.home' },
+  { to: '/about', key: 'nav.about' },
+  { to: '/courses', key: 'nav.courses' },
+  { to: '/login', key: 'auth.login' },
+  { to: '/register', key: 'auth.register' },
 ]
 </script>

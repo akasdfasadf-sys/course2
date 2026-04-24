@@ -36,6 +36,25 @@
           <div class="lg:col-span-2">
             <form @submit.prevent="handleSubmit" class="bg-white rounded-xl shadow-sm p-5 md:p-8 space-y-6">
 
+              <!-- 0. Dereje saýlawy (diňe köp derejeli kurslarda) -->
+              <div v-if="hasLevels" class="bg-blue-50 border border-blue-100 rounded-xl p-4 md:p-5">
+                <h2 class="text-base md:text-lg font-bold text-gray-900 mb-1">📊 Haýsy derejeden başlaýarsyňyz?</h2>
+                <p class="text-xs text-gray-500 mb-3">Bu kurs birnäçe derejäni öz içine alýar. Başlajak derejeňizi saýlaň.</p>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  <button v-for="lvl in courseLevels" :key="lvl.value" type="button"
+                    @click="form.startLevel = lvl.value"
+                    :class="['flex flex-col items-center gap-1 p-3 rounded-xl border-2 transition-all duration-200 text-center',
+                      form.startLevel === lvl.value
+                        ? 'border-blue-500 bg-blue-100 shadow-sm'
+                        : 'border-gray-200 bg-white hover:border-blue-300']">
+                    <span class="text-xl">{{ lvl.icon }}</span>
+                    <span class="text-xs font-bold" :class="form.startLevel === lvl.value ? 'text-blue-700' : 'text-gray-700'">{{ lvl.label }}</span>
+                    <span class="text-xs" :class="form.startLevel === lvl.value ? 'text-blue-500' : 'text-gray-400'">{{ lvl.sub }}</span>
+                  </button>
+                </div>
+                <p class="text-xs text-blue-600 mt-2">ℹ️ Mugallym bilen maslahatlaşyp, dogry derejäni kesgitläp bilersiňiz.</p>
+              </div>
+
               <!-- 1. Şahsy maglumatlar -->
               <div>
                 <h2 class="text-base md:text-lg font-bold text-gray-900 mb-1">Şahsy maglumatlar</h2>
@@ -293,7 +312,21 @@ const form = ref({
   discountType: '0',
   paymentMethod: 'card',
   withCertificate: true,
+  startLevel: '',
 })
+
+// Kursyň adynda "I-II-III-IV" ýa "dereje" bar bolsa köp derejeli
+const hasLevels = computed(() => {
+  const title = course.value?.titleTm || ''
+  return /I-II|dereje|Level/i.test(title)
+})
+
+const courseLevels = [
+  { value: 'I', label: 'I dereje', sub: 'Başlangyç', icon: '🌱' },
+  { value: 'II', label: 'II dereje', sub: 'Orta', icon: '📗' },
+  { value: 'III', label: 'III dereje', sub: 'Ýokary', icon: '📘' },
+  { value: 'IV', label: 'IV dereje', sub: 'Ösen', icon: '🏆' },
+]
 
 const personalInfo = ref({
   firstName: auth.user.value?.firstName || '',

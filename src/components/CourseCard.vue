@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <RouterLink :to="`/course/${course.id}`" class="block group h-full">
     <article
       class="bg-white rounded-3xl overflow-hidden border border-gray-100/50 shadow-lg shadow-gray-200/50 h-full flex flex-col transition-all duration-300 ease-out group-hover:shadow-2xl group-hover:shadow-blue-500/10 group-hover:-translate-y-2 group-hover:border-blue-200/60 ring-0 group-hover:ring-2 group-hover:ring-blue-500/10"
@@ -55,7 +55,7 @@
               'bg-red-500/90 text-white border-red-400/50'
             ]"
           >
-            {{ course.level === 'Beginner' ? '🟢 Başlangyç' : course.level === 'Intermediate' ? '🟡 Orta' : '🔴 Ösen' }}
+            {{ course.level === 'Beginner' ? `🟢 ${t('courses.beginner')}` : course.level === 'Intermediate' ? `🟡 ${t('courses.intermediate')}` : `🔴 ${t('courses.advanced')}` }}
           </span>
         </div>
       </div>
@@ -76,7 +76,7 @@
           </div>
           <div class="flex-1 min-w-0">
             <div class="text-sm text-gray-700 font-medium truncate">{{ course.instructor }}</div>
-            <div class="text-xs text-gray-500">{{ course.weeks }} hepde</div>
+            <div class="text-xs text-gray-500">{{ course.weeks }} {{ t('courses.weeks').replace('{n}', '') }}</div>
           </div>
         </div>
 
@@ -89,7 +89,7 @@
             </div>
             <span class="text-xs text-gray-500">({{ course.studentsEnrolled }})</span>
           </div>
-          <div class="text-xs text-gray-500">{{ course.weeks }} hepde</div>
+          <div class="text-xs text-gray-500">{{ course.weeks }} {{ t('courses.weeks').replace('{n}', '') }}</div>
         </div>
 
         <!-- Price section -->
@@ -99,10 +99,10 @@
             <span class="text-sm text-gray-500 line-through">{{ course.basePrice }} TMT</span>
           </div>
           <div v-if="isEnrolled" class="px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">
-            Ýazylan
+            {{ t('courses.enrolled') }}
           </div>
           <div v-else class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">
-            Elýeterli
+            {{ t('courses.enroll') }}
           </div>
         </div>
       </div>
@@ -113,10 +113,12 @@
 <script setup>
 import { computed } from 'vue'
 import { Star, Play } from 'lucide-vue-next'
+import { useI18n } from 'vue-i18n'
 import { useAuth } from '../stores/auth'
 
 const props = defineProps({ course: Object })
 const auth = useAuth()
+const { t } = useI18n()
 const isEnrolled = computed(() => auth.user.value?.enrolledCourses?.includes(props.course.id))
 
 const categoryMap = {
@@ -125,7 +127,7 @@ const categoryMap = {
   'Matematika': { icon: '🔢' },
   'Ylymlar': { icon: '🔬' },
   'Mugallymçylyk we pedagogika': { icon: '👨‍🏫' },
-  'Kompýuter endikleri': { icon: '🖥️' },
+  'Komputer endikleri': { icon: '🖥️' },
 }
 
 const categoryIcon = computed(() =>

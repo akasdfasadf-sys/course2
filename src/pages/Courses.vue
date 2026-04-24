@@ -6,7 +6,6 @@
       <div class="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-transparent to-indigo-50/50 pointer-events-none" />
       <div v-bm-reveal:up class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10">
         <h1 class="text-2xl md:text-4xl font-extrabold text-gray-900 mb-1 md:mb-2 tracking-tight">Ähli kurslar</h1>
-        <p class="text-sm md:text-base text-gray-600">{{ categories.length }} kategoriýada {{ courses.length }} kursy öwreniň</p>
       </div>
     </div>
 
@@ -60,7 +59,6 @@
       </div>
 
       <div class="mb-3 md:mb-4">
-        <p class="text-sm md:text-base text-gray-600 font-medium">{{ filtered.length }} kurs tapyldy</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
@@ -81,7 +79,8 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 import { Search } from 'lucide-vue-next'
 import AppHeader from '../components/AppHeader.vue'
 import CourseCard from '../components/CourseCard.vue'
@@ -89,10 +88,15 @@ import CategoryFilter from '../components/CategoryFilter.vue'
 import AppFooter from '../components/AppFooter.vue'
 import { courses, categories } from '../data/courses'
 
+const route = useRoute()
 const search = ref('')
 const selectedCat = ref('All')
 const selectedLevel = ref('All')
 const sortBy = ref('default')
+
+onMounted(() => {
+  if (route.query.search) search.value = route.query.search
+})
 
 const levels = [
   { value: 'Beginner', label: 'Başlangyç', icon: '🟢', activeBg: 'bg-green-100', activeText: 'text-green-700' },
