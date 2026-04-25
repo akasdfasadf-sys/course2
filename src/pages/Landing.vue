@@ -22,58 +22,42 @@
           </span>
         </RouterLink>
         <div class="flex items-center gap-2 md:gap-3">
+          <RouterLink to="/register"
+            :class="scrolled ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-white/20 text-white hover:bg-white/30 border border-white/30'"
+            class="px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200">
+            Hasaba alyň
+          </RouterLink>
+          <RouterLink to="/login"
+            :class="scrolled ? 'border border-gray-300 text-gray-700 hover:bg-gray-50' : 'border border-white/40 text-white hover:bg-white/10'"
+            class="px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200">
+            Giriş
+          </RouterLink>
         </div>
       </div>
     </header>
 
     <!-- Hero -->
     <section
-      class="relative text-white overflow-hidden bm-hero-gradient bg-gradient-to-br from-[#0056d2] via-blue-700 to-indigo-900 pt-14 md:pt-16"
+      class="relative text-white overflow-hidden pt-14 md:pt-16"
+      style="min-height: 100svh;"
     >
-      <div
-        class="pointer-events-none absolute -top-24 -right-24 w-[min(100vw,28rem)] h-[min(100vw,28rem)] rounded-full bg-sky-400/25 blur-3xl bm-hero-blob"
-      />
-      <div
-        class="pointer-events-none absolute top-1/2 -left-32 w-80 h-80 rounded-full bg-violet-500/20 blur-3xl bm-hero-blob bm-hero-blob-delay"
-      />
-      <div
-        class="pointer-events-none absolute bottom-0 right-1/4 w-64 h-64 rounded-full bg-cyan-400/15 blur-3xl bm-hero-blob bm-hero-blob-delay-2"
-      />
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(255,255,255,0.18),transparent)]" />
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-28 lg:py-32">
+      <!-- Slider images -->
+      <div class="absolute inset-0 overflow-hidden">
+        <!-- Öňki surat saga gidýär -->
         <div
-          class="text-center max-w-4xl mx-auto bm-stagger will-change-transform"
-          :style="heroParallaxStyle"
-        >
-          <div
-            class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full mb-5 md:mb-6 border border-white/20"
-          >
-            <BookOpen class="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-            <span class="text-xs md:text-sm font-medium">Türkmenistanyň iň öňdebaryjy onlaýn okuw platformasy</span>
-          </div>
-          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 md:mb-6 leading-[1.1] tracking-tight">
-            Geljegiňizi <br />
-            <span class="text-blue-100">Döretmäge Başlaň</span>
-          </h1>
-          <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-50/95 mb-6 md:mb-8 leading-relaxed px-2 max-w-3xl mx-auto">
-
-          </p>
-          <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4 sm:px-0">
-            <RouterLink
-              to="/register"
-              class="inline-flex items-center justify-center gap-2 bg-white text-blue-700 px-6 py-3.5 md:px-8 md:py-4 rounded-xl font-bold text-base md:text-lg hover:bg-blue-50 transition-all duration-300 shadow-xl shadow-black/15 hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0"
-            >
-              Hasaba alyň <ArrowRight class="w-5 h-5" />
-            </RouterLink>
-            <RouterLink
-              to="/login"
-              class="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border-2 border-white/35 text-white px-6 py-3.5 md:px-8 md:py-4 rounded-xl font-bold text-base md:text-lg hover:bg-white/20 transition-all duration-300 active:scale-[0.99]"
-            >
-              Giriş
-            </RouterLink>
-          </div>
-        </div>
+          v-if="prevImg >= 0"
+          class="absolute inset-0 bg-cover bg-center slide-out-left"
+          :style="{ backgroundImage: `url('${heroImages[prevImg]}')`, backgroundPosition: 'center center' }"
+        />
+        <!-- Täze surat çepden gelýär -->
+        <div
+          :key="currentImg"
+          class="absolute inset-0 bg-cover bg-center"
+          :class="sliding ? 'slide-in-right' : ''"
+          :style="{ backgroundImage: `url('${heroImages[currentImg]}')`, backgroundPosition: 'center center' }"
+        />
       </div>
+      <div class="absolute inset-0 bg-black/40" />
     </section>
 
     <!-- Features -->
@@ -138,6 +122,13 @@ const scrolled = ref(false)
 const scrollY = ref(0)
 let offParallax = () => {}
 
+// Hero slider
+const heroImages = ['/download.webp', '/download.jpg']
+const currentImg = ref(0)
+const prevImg = ref(-1)
+const sliding = ref(false)
+let sliderInterval = null
+
 const heroParallaxStyle = computed(() => ({
   transform: `translate3d(0, ${Math.min(scrollY.value * 0.08, 52)}px, 0)`,
 }))
@@ -169,11 +160,21 @@ function onScroll() {
 onMounted(() => {
   onScroll()
   window.addEventListener('scroll', onScroll, { passive: true })
+  sliderInterval = setInterval(() => {
+    prevImg.value = currentImg.value
+    sliding.value = true
+    currentImg.value = (currentImg.value + 1) % heroImages.length
+    setTimeout(() => {
+      sliding.value = false
+      prevImg.value = -1
+    }, 700)
+  }, 3000)
 })
 
 onUnmounted(() => {
   offParallax()
   window.removeEventListener('scroll', onScroll)
+  clearInterval(sliderInterval)
 })
 
 const features = [
@@ -198,3 +199,20 @@ const footerLinks = [
   { to: '/register', label: 'Hasaba alyň' },
 ]
 </script>
+
+<style scoped>
+@keyframes slideOutLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+.slide-out-left {
+  animation: slideOutLeft 0.7s ease-in-out forwards;
+}
+.slide-in-right {
+  animation: slideInRight 0.7s ease-in-out forwards;
+}
+</style>

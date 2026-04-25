@@ -6,7 +6,7 @@
   { id: '5', name: 'Mathematics', nameTm: 'Matematika', icon: 'Calculator' },
   { id: '6', name: 'Sciences', nameTm: 'Ylymlar', icon: 'Atom' },
   { id: '7', name: 'Languages', nameTm: 'Diller', icon: 'Languages' },
-  { id: '8', name: 'Computer Skills', nameTm: 'Komputer sowatlylygy', icon: 'Monitor' },
+  { id: '8', name: 'Computer Skills', nameTm: 'Kompýuter sowatlylygy', icon: 'Monitor' },
   { id: '9', name: 'Robotics', nameTm: 'Robot tehnikasy', icon: 'Cpu' },
 ]
 
@@ -27,9 +27,9 @@ export const courses = [
   },
   // 2. Komputer sowatlylygy
   {
-    id: '2', title: 'Computer Literacy', titleTm: 'Komputer sowatlylygy',
+    id: '2', title: 'Computer Literacy', titleTm: 'Kompýuter sowatlylygy',
     description: 'Learn essential computer skills.',
-    descriptionTm: 'Windows, Office programmalary we internet esaslary aly mhm Komputer sowatlylygyni wrenin.',
+    descriptionTm: 'Windows, Office programmalary we internet esaslary ýaly möhüm kompýuter sowatlylygyny öwreniň.',
     instructor: 'Merdan Annaew',
     instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
     thumbnail: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&fit=crop',

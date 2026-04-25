@@ -45,7 +45,7 @@
                   class="block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center px-4 py-3 rounded-xl font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg shadow-blue-600/25 mb-2 text-sm active:scale-[0.99]">
                   Ýazylmak
                 </RouterLink>
-                <p class="text-xs text-gray-600 text-center">Tölegiňizi 2-3 aýa böläýsiňiz</p>
+                <p class="text-xs text-gray-600 text-center">Tölegiňizi 3 aýyň dowamynda edip bilersiňiz</p>
               </template>
             </div>
           </div>
@@ -116,7 +116,7 @@
                       class="block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center px-6 py-3.5 rounded-xl font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg shadow-blue-600/25 mb-2 active:scale-[0.99]">
                       Ýazylmak
                     </RouterLink>
-                    <p class="text-sm text-gray-600 text-center">Tölegiňizi 2-3 aýa böläýsiňiz</p>
+                    <p class="text-sm text-gray-600 text-center">Tölegiňizi 3 aýyň dowamynda edip bilersiňiz</p>
                   </template>
                 </div>
               </div>
