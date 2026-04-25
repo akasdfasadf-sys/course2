@@ -23,20 +23,19 @@
         <!-- Right side -->
         <div class="flex items-center gap-1 md:gap-2">
           <!-- Dil saýlaýjy -->
-          <div class="relative group" ref="langRef">
+          <div class="relative" ref="langRef">
             <button type="button"
+              @click="langOpen = !langOpen"
               class="flex items-center gap-1 px-1.5 py-1.5 rounded-xl hover:bg-gray-100 transition-colors">
-              <!-- Häzirki diliň baýdagy -->
               <span class="w-7 h-5 rounded-sm overflow-hidden flex-shrink-0 shadow-sm">
                 <component :is="currentLang.flagSvg" />
               </span>
-              <svg class="w-3 h-3 text-gray-400 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              <svg class="w-3 h-3 text-gray-400 transition-transform duration-200" :class="langOpen ? 'rotate-180' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <!-- Hover dropdown -->
-            <div class="absolute right-0 top-full pt-1 hidden group-hover:block z-50">
+            <div v-if="langOpen" class="absolute right-0 top-full pt-1 z-50">
               <div class="bg-white border border-gray-100 rounded-xl shadow-xl overflow-hidden min-w-[150px]">
                 <button v-for="lang in languages" :key="lang.code" type="button"
-                  @click="setLang(lang.code)"
+                  @click="setLang(lang.code); langOpen = false"
                   class="w-full flex items-center gap-2.5 px-3 py-2.5 hover:bg-gray-50 transition-colors"
                   :class="locale === lang.code ? 'bg-blue-50' : ''">
                   <span class="w-7 h-5 rounded-sm overflow-hidden flex-shrink-0 shadow-sm">
@@ -103,7 +102,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { BookOpen, User, LogOut, Menu, X, Home, GraduationCap, LayoutGrid } from 'lucide-vue-next'
@@ -118,6 +117,7 @@ const route = useRoute()
 const { locale, t } = useI18n()
 
 const menuOpen = ref(false)
+const langOpen = ref(false)
 const langRef = ref(null)
 
 const languages = [
@@ -150,4 +150,10 @@ function handleLogout() {
   auth.logout()
   router.push('/')
 }
+
+function onClickOutside(e) {
+  if (langRef.value && !langRef.value.contains(e.target)) langOpen.value = false
+}
+onMounted(() => document.addEventListener('click', onClickOutside))
+onUnmounted(() => document.removeEventListener('click', onClickOutside))
 </script>

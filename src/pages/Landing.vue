@@ -38,25 +38,8 @@
 
     <!-- Hero -->
     <section
-      class="relative text-white overflow-hidden pt-14 md:pt-16"
-      style="min-height: 100svh;"
+      class="hero-section relative text-white overflow-hidden pt-14 md:pt-16"
     >
-      <!-- Slider images -->
-      <div class="absolute inset-0 overflow-hidden">
-        <!-- Öňki surat saga gidýär -->
-        <div
-          v-if="prevImg >= 0"
-          class="absolute inset-0 bg-cover bg-center slide-out-left"
-          :style="{ backgroundImage: `url('${heroImages[prevImg]}')`, backgroundPosition: 'center center' }"
-        />
-        <!-- Täze surat çepden gelýär -->
-        <div
-          :key="currentImg"
-          class="absolute inset-0 bg-cover bg-center"
-          :class="sliding ? 'slide-in-right' : ''"
-          :style="{ backgroundImage: `url('${heroImages[currentImg]}')`, backgroundPosition: 'center center' }"
-        />
-      </div>
       <div class="absolute inset-0 bg-black/40" />
     </section>
 
@@ -122,12 +105,7 @@ const scrolled = ref(false)
 const scrollY = ref(0)
 let offParallax = () => {}
 
-// Hero slider
-const heroImages = ['/download.webp', '/download.jpg']
-const currentImg = ref(0)
-const prevImg = ref(-1)
-const sliding = ref(false)
-let sliderInterval = null
+// Hero slider logikasy aýryldy
 
 const heroParallaxStyle = computed(() => ({
   transform: `translate3d(0, ${Math.min(scrollY.value * 0.08, 52)}px, 0)`,
@@ -160,21 +138,11 @@ function onScroll() {
 onMounted(() => {
   onScroll()
   window.addEventListener('scroll', onScroll, { passive: true })
-  sliderInterval = setInterval(() => {
-    prevImg.value = currentImg.value
-    sliding.value = true
-    currentImg.value = (currentImg.value + 1) % heroImages.length
-    setTimeout(() => {
-      sliding.value = false
-      prevImg.value = -1
-    }, 700)
-  }, 3000)
 })
 
 onUnmounted(() => {
   offParallax()
   window.removeEventListener('scroll', onScroll)
-  clearInterval(sliderInterval)
 })
 
 const features = [
@@ -201,6 +169,37 @@ const footerLinks = [
 </script>
 
 <style scoped>
+.hero-section {
+  min-height: 100svh;
+  background-image: url('/download.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Telefon (portrait) */
+@media (max-width: 640px) {
+  .hero-section {
+    min-height: 60svh;
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+/* Planşet */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hero-section {
+    min-height: 80svh;
+    background-position: center center;
+  }
+}
+
+/* Uly ekran */
+@media (min-width: 1025px) {
+  .hero-section {
+    min-height: 100svh;
+  }
+}
 @keyframes slideOutLeft {
   from { transform: translateX(0); }
   to   { transform: translateX(-100%); }
